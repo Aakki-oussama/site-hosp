@@ -7,8 +7,8 @@ import { Menu, Phone } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle } from "@/components/ui/sheet"
 import { companyInfo } from "@/config/infos"
+import{ navLinks } from "@/config/navigation"
 import { cn } from "@/lib/utils"
-import {navLinks} from "@/config/navigation"
 
 function isActiveLink(pathname: string, href: string) {
   return href === "/" ? pathname === "/" : pathname.startsWith(href)

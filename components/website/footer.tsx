@@ -1,9 +1,8 @@
 import Link from "next/link"
-import { companyInfo } from "@/config/infos"
+import { companyInfo , contactItems } from "@/config/infos"
 import { gammes } from "@/data/gammes"
 import { cn } from "@/lib/utils"
-import { contactItems } from "@/config/infos"
-import {navLinks} from "@/config/navigation"
+import{ navLinks } from "@/config/navigation"
 
 const sectionTitleClass =
   "font-heading text-sm font-bold uppercase tracking-wider text-foreground"
