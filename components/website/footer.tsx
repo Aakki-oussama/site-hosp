@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { companyInfo , contactItems } from "@/config/infos"
+import { companyInfo , footerContact } from "@/config/infos"
 import { gammes } from "@/data/gammes"
 import { cn } from "@/lib/utils"
 import{ navLinks } from "@/config/navigation"
@@ -68,7 +68,7 @@ export function Footer() {
             <p className={sectionTitleClass}>Contact</p>
             <div className="mt-1 h-1 w-16 rounded-full bg-primary" />
             <ul className="mt-5 space-y-3 text-sm text-foreground">
-              {contactItems.map(({ icon: Icon, iconClassName, label, href }) => (
+              {footerContact.map(({ icon: Icon, iconClassName, label, href }) => (
                 <li key={label} className="flex items-start gap-3">
                   <Icon
                     className={cn("mt-0.5 h-4 w-4 shrink-0", iconClassName)}
@@ -87,7 +87,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col items-start justify-between gap-3 border-t border-border pt-8 text-xs text-muted-foreground sm:flex-row sm:items-center">
+        <div className="mt-12 flex flex-col items-start justify-between gap-3 border-t border-border pt-8 text-xs text-foreground sm:flex-row sm:items-center">
           <p>
             © {year} {companyInfo.name}. Tous droits réservés.
           </p>
