@@ -1,5 +1,6 @@
 import { Footer } from "@/components/website/footer"
 import  { Navbar }  from "@/components/website/navbar"
+import { Toaster } from "sonner"
 
 export default function WebsiteLayout({
   children,
@@ -13,6 +14,7 @@ export default function WebsiteLayout({
         {children}
       </main>
       <Footer />
+      <Toaster richColors closeButton position="top-right" />
     </>
   )
 }

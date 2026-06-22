@@ -2,7 +2,10 @@ import type { Metadata } from "next"
 import { SectionHeader } from "@/components/shared/header-site/section-header"
 import { companyInfo } from "@/config/infos"
 import { ContactInfo } from "./_components/info-contact"
-import { BusinessHours} from "./_components/timer"
+import { BusinessHours } from "./_components/timer"
+import { FormContact } from "./_components/form-contact"
+import { FAQContact } from "./_components/faq-contact"
+import { MapContact } from "./_components/map-contact"
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -55,10 +58,23 @@ export default function ContactPage() {
         align="left"
       />
       
-      <main className="max-w-7xl mx-auto px-6 lg:px-8 py-16 space-y-16">
-        <ContactInfo />
-        <BusinessHours/>
+      <main className="max-w-7xl mx-auto px-6 lg:px-8 py-16">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16">
+          {/* Left: Form (60%) */}
+          <div className="lg:col-span-3 space-y-8">
+            <FormContact />
+            <MapContact />
+          </div>
+
+          {/* Right: Contact Info (40%) */}
+          <div className="lg:col-span-2 space-y-8">
+            <ContactInfo />
+            <BusinessHours />
+          </div>
+        </div>
       </main>
+
+      <FAQContact />
     </>
   )
 }

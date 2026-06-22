@@ -1,6 +1,5 @@
 "use client"
 
-import { Icon } from "@/components/shared/icons"
 import { Clock } from "lucide-react"
 import { BrandCard } from "@/components/shared/brand-card"
 import { companyInfo } from "@/config/infos"

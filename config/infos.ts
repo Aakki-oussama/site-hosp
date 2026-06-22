@@ -55,6 +55,7 @@ export const contactItems: ContactItem[] = [
     note: "Envoi de documents et confirmations",
   },
 
+  /*
   {
     icon: Mail,
     iconClassName: "text-primary",
@@ -62,7 +63,8 @@ export const contactItems: ContactItem[] = [
     href: `mailto:${companyInfo.email}`,
     label: companyInfo.email,
     note: "Contact client et information générale",
-  },
+  },*/
+
   {
     icon: Mail,
     iconClassName: "text-primary",
@@ -87,6 +89,7 @@ export const contactItems: ContactItem[] = [
     label: `${companyInfo.address}, ${companyInfo.country}`,
     note: "Visite sur rendez-vous",
   },
+  /*
   {
     icon: Building2,
     iconClassName: "text-primary",
@@ -94,6 +97,7 @@ export const contactItems: ContactItem[] = [
     label: companyInfo.factory,
     note: "Production locale au Maroc",
   },
+  */
 ]
 
 /*for footer contact items*/

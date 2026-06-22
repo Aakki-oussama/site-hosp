@@ -14,7 +14,7 @@ export function BrandCard({ icon, title, children, note, className }: BrandCardP
   return (
     <Card
       className={cn(
-        "group relative bg-muted/50 border-border",
+        "group relative bg-muted/50 border-border py-0",
         "transition-all duration-300 ease-in-out",
         "hover:bg-card hover:border-primary/50",
         className
