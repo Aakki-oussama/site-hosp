@@ -47,7 +47,7 @@ export const gammes: Gamme[] = [
   {
     id: "bio",
     slug: "bio",
-    name: "Gamme Bio",
+    name: "Gamme bio",
     description:
       "Formules écologiques et biodégradables pour une hygiène responsable",
     icon: "Leaf",
