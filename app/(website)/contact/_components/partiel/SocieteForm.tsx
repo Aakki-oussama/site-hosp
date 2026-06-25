@@ -26,7 +26,7 @@ import {
 } from "@/components/ui/select"
 
 interface SocieteFormProps {
-  onSubmit: (data: SocieteFormData) => void | Promise<void>
+  onSubmit: (data: SocieteFormData) => Promise<boolean>
   isLoading?: boolean
 }
 
@@ -36,6 +36,7 @@ export function SocieteForm({ onSubmit, isLoading = false }: SocieteFormProps) {
     handleSubmit,
     watch,
     setValue,
+    reset,
     formState: { errors },
   } = useForm<SocieteFormData>({
     resolver: zodResolver(societeSchema),
@@ -49,7 +50,10 @@ export function SocieteForm({ onSubmit, isLoading = false }: SocieteFormProps) {
   const secteurValue = watch("secteur")
 
   const handleSubmitForm = async (data: SocieteFormData) => {
-    await onSubmit(data)
+    const success = await onSubmit(data)
+    if (success) {
+      reset()
+    }
   }
 
   return (
@@ -202,6 +206,14 @@ export function SocieteForm({ onSubmit, isLoading = false }: SocieteFormProps) {
             {errors.message && <FieldError errors={[{ message: errors.message.message }]} />}
           </FieldContent>
         </Field>
+        {/* Honeypot ← ADD HERE */}
+      <input
+        type="text"
+        tabIndex={-1}
+        autoComplete="off"
+        {...register("honeypot")}
+        style={{ position: "absolute", left: "-9999px", opacity: 0, pointerEvents: "none" }}
+      />
       </FieldGroup>
 
       <Button type="submit" disabled={isLoading} className="w-full">

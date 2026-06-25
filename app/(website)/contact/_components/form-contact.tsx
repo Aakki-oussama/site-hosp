@@ -5,7 +5,7 @@ import type { ContactFormData, ParticulierFormData, SocieteFormData } from "@/li
 import { ParticulierForm } from "./partiel/ParticulierForm"
 import { SocieteForm } from "./partiel/SocieteForm"
 import { toast } from "sonner"
-
+import { submitContactForm } from "@/app/actions/contact"
 
 type FormType = "particulier" | "societe"
 
@@ -13,18 +13,28 @@ export function FormContact() {
   const [formType, setFormType] = useState<FormType>("particulier")
   const [isLoading, setIsLoading] = useState(false)
 
-  const handleSubmit = async (data: ContactFormData) => {
+  const handleSubmit = async (data: ContactFormData): Promise<boolean> => {
+    // Honeypot — silent fake success for bots
+  if (data.honeypot && data.honeypot.length > 0) {
+
+    toast.success("Votre message a été envoyé avec succès.")
+    return true
+  }
     try {
       setIsLoading(true)
-      // TODO: Send form data to backend/API
+      const result = await submitContactForm(data)
       
-      // TODO: Show success toast
-      toast.success("Merci ! Votre demande a été envoyée avec succès. Un expert vous répondra sous 24h.")
-      
+      if (result.success) {
+        toast.success(result.message)
+        return true
+      } else {
+        toast.error(result.message)
+        return false
+      }
     } catch (error) {
       console.error("Error submitting form:", error)
-      // TODO: Show error toast
       toast.error("Une erreur est survenue lors de l'envoi. Veuillez réessayer.")
+      return false
     } finally {
       setIsLoading(false)
     }
@@ -66,19 +76,19 @@ export function FormContact() {
       </div>
 
       {/* Forms */}
-      {formType === "particulier" && (
-        <ParticulierForm
-          onSubmit={(data) => handleSubmit({ ...data, type: "particulier" } as ParticulierFormData)}
-          isLoading={isLoading}
-        />
-      )}
+    {formType === "particulier" && (
+      <ParticulierForm
+    onSubmit={(data) => handleSubmit({ ...data, type: "particulier" })}
+    isLoading={isLoading}
+  />
+)}
 
-      {formType === "societe" && (
-        <SocieteForm
-          onSubmit={(data) => handleSubmit({ ...data, type: "societe" } as SocieteFormData)}
-          isLoading={isLoading}
-        />
-      )}
+{formType === "societe" && (
+  <SocieteForm
+    onSubmit={(data) => handleSubmit({ ...data, type: "societe" })}
+    isLoading={isLoading}
+  />
+)}
     </div>
   )
 }

@@ -25,7 +25,7 @@ import {
 } from "@/components/ui/select"
 
 interface ParticulierFormProps {
-  onSubmit: (data: ParticulierFormData) => void | Promise<void>
+  onSubmit: (data: ParticulierFormData) => Promise<boolean>
   isLoading?: boolean
 }
 
@@ -35,6 +35,7 @@ export function ParticulierForm({ onSubmit, isLoading = false }: ParticulierForm
     handleSubmit,
     watch,
     setValue,
+    reset,
     formState: { errors },
   } = useForm<ParticulierFormData>({
     resolver: zodResolver(particulierSchema),
@@ -47,7 +48,10 @@ export function ParticulierForm({ onSubmit, isLoading = false }: ParticulierForm
   const villeValue = watch("ville")
 
   const handleSubmitForm = async (data: ParticulierFormData) => {
-    await onSubmit(data)
+    const success = await onSubmit(data)
+    if (success) {
+      reset()
+    }
   }
 
   return (
@@ -155,6 +159,14 @@ export function ParticulierForm({ onSubmit, isLoading = false }: ParticulierForm
             {errors.message && <FieldError errors={[{ message: errors.message.message }]} />}
           </FieldContent>
         </Field>
+      {/* Honeypot */}
+        <input
+          type="text"
+          tabIndex={-1}
+          autoComplete="off"
+          {...register("honeypot")}
+          style={{ position: "absolute", left: "-9999px", opacity: 0, pointerEvents: "none" }}
+        />
       </FieldGroup>
 
       <Button type="submit" disabled={isLoading} className="w-full">
