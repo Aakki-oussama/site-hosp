@@ -206,7 +206,8 @@ export function SocieteForm({ onSubmit, isLoading = false }: SocieteFormProps) {
             {errors.message && <FieldError errors={[{ message: errors.message.message }]} />}
           </FieldContent>
         </Field>
-        {/* Honeypot ← ADD HERE */}
+      </FieldGroup>
+            {/* Honeypot */}
       <input
         type="text"
         tabIndex={-1}
@@ -214,7 +215,6 @@ export function SocieteForm({ onSubmit, isLoading = false }: SocieteFormProps) {
         {...register("honeypot")}
         style={{ position: "absolute", left: "-9999px", opacity: 0, pointerEvents: "none" }}
       />
-      </FieldGroup>
 
       <Button type="submit" disabled={isLoading} className="w-full">
         {isLoading ? "Envoi en cours..." : "Envoyer ma demande"}

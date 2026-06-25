@@ -159,6 +159,8 @@ export function ParticulierForm({ onSubmit, isLoading = false }: ParticulierForm
             {errors.message && <FieldError errors={[{ message: errors.message.message }]} />}
           </FieldContent>
         </Field>
+      </FieldGroup>
+      
       {/* Honeypot */}
         <input
           type="text"
@@ -167,7 +169,6 @@ export function ParticulierForm({ onSubmit, isLoading = false }: ParticulierForm
           {...register("honeypot")}
           style={{ position: "absolute", left: "-9999px", opacity: 0, pointerEvents: "none" }}
         />
-      </FieldGroup>
 
       <Button type="submit" disabled={isLoading} className="w-full">
         {isLoading ? "Envoi en cours..." : "Envoyer ma demande"}
