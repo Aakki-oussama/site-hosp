@@ -32,4 +32,4 @@ export function Icon({ icon: Icon, size, color, className }: IconProps) {
   )
 }
 
-export { Phone, Mail, MapPin, Factory, MessageCircleMore, Clock, HelpCircle } from "lucide-react"
+export {Sparkles, ShieldCheck, HeartHandshake, Leaf, Phone, Mail, MapPin, Factory, MessageCircleMore, Clock, HelpCircle } from "lucide-react"

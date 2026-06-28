@@ -17,7 +17,7 @@ const geistMono = Instrument_Sans({
 
 export const metadata: Metadata = {
   title: {
-    template: "%s | Polaris Industrie",
+    template: "%s | Polaris Industrie Hosp",
     default: "Polaris Industrie HOSP - Hygiène et Désinfection | Maroc",
   },
   description: "Leader marocain de l'hygiène et de la désinfection professionnelle.",

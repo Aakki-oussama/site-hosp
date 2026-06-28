@@ -176,3 +176,32 @@
   background-clip: text;
   color: transparent;
 }
+
+/* ─── Timeline Scroll Animations ─────────────────────────────────────────── */
+
+/* ─── Timeline Animations ──────────────────────────────── */
+
+.timeline-item {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.timeline-item.timeline-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.timeline-item:nth-child(2) { transition-delay: 0.05s; }
+.timeline-item:nth-child(3) { transition-delay: 0.1s; }
+.timeline-item:nth-child(4) { transition-delay: 0.15s; }
+.timeline-item:nth-child(5) { transition-delay: 0.2s; }
+.timeline-item:nth-child(6) { transition-delay: 0.25s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .timeline-item {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
