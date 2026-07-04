@@ -9,7 +9,7 @@ export function CTASection() {
 
       {/* Background */}
 
-      <div className="absolute inset-0 -z-10 bg-muted" />
+      <div className="absolute inset-0 -z-10 bg-background" />
 
       <div
         aria-hidden
@@ -28,9 +28,9 @@ export function CTASection() {
         </p>
 
         <h2 className="mt-6 font-heading text-4xl font-bold tracking-tight lg:text-5xl">
-          Besoin d'une solution{" "}
+          Besoin d&apos;une solution{" "}
           <span className="text-primary">
-            d'hygiène professionnelle
+            d&apos;hygiène professionnelle
           </span>{" "}
           ?
         </h2>

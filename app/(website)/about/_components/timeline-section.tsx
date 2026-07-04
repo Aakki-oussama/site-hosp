@@ -46,8 +46,8 @@ export function TimelineSection() {
             Notre Parcours
           </h2>
           <p className="mt-4 leading-7 text-muted-foreground">
-            De notre fondation à aujourd'hui, une croissance portée par
-            l'expertise et la confiance de nos partenaires.
+            De notre fondation à aujourd&apos;hui, une croissance portée par
+            l&apos;expertise et la confiance de nos partenaires.
           </p>
         </header>
 

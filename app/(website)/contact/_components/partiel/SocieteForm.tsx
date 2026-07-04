@@ -1,6 +1,6 @@
 "use client"
 
-import { useForm } from "react-hook-form"
+import { useForm, useWatch } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import type { SocieteFormData } from "@/lib/validations/contact"
 import { societeSchema } from "@/lib/validations/contact"
@@ -34,7 +34,7 @@ export function SocieteForm({ onSubmit, isLoading = false }: SocieteFormProps) {
   const {
     register,
     handleSubmit,
-    watch,
+    control,
     setValue,
     reset,
     formState: { errors },
@@ -43,16 +43,29 @@ export function SocieteForm({ onSubmit, isLoading = false }: SocieteFormProps) {
     mode: "onBlur",
     defaultValues: {
       type: "societe",
+      ville: "",
+      secteur: "",
+      nomSociete: "",
+      nomResponsable: "",
+      telephone: "",
+      email: "",
+      objet: "",
+      message: "",
+      honeypot: "",
     },
   })
 
-  const villeValue = watch("ville")
-  const secteurValue = watch("secteur")
+  const villeValue = useWatch({ control, name: "ville" })
+  const secteurValue = useWatch({ control, name: "secteur" })
 
   const handleSubmitForm = async (data: SocieteFormData) => {
-    const success = await onSubmit(data)
-    if (success) {
-      reset()
+    try {
+      const success = await onSubmit(data)
+      if (success) {
+        reset({ type: "societe" })
+      }
+    } catch (err) {
+      console.error("Unexpected error submitting form:", err)
     }
   }
 
@@ -104,6 +117,8 @@ export function SocieteForm({ onSubmit, isLoading = false }: SocieteFormProps) {
             <Input
               id="telephone"
               placeholder="Ex: +212 537 570 035"
+              inputMode="tel"
+              autoComplete="tel"
               {...register("telephone")}
               aria-invalid={!!errors.telephone}
             />
@@ -121,6 +136,7 @@ export function SocieteForm({ onSubmit, isLoading = false }: SocieteFormProps) {
               id="email"
               type="email"
               placeholder="Ex: contact@societe.com"
+              autoComplete="email"
               {...register("email")}
               aria-invalid={!!errors.email}
             />
@@ -134,7 +150,10 @@ export function SocieteForm({ onSubmit, isLoading = false }: SocieteFormProps) {
             <Label htmlFor="ville">Ville (optionnel)</Label>
           </FieldLabel>
           <FieldContent>
-            <Select value={villeValue || ""} onValueChange={(value) => setValue("ville", value)}>
+            <Select
+              value={villeValue ?? ""}
+              onValueChange={(value) => setValue("ville", value, { shouldValidate: true, shouldDirty: true })}
+            >
               <SelectTrigger id="ville">
                 <SelectValue placeholder="Choisir une ville" />
               </SelectTrigger>
@@ -152,12 +171,12 @@ export function SocieteForm({ onSubmit, isLoading = false }: SocieteFormProps) {
         {/* Secteur d'Activité */}
         <Field>
           <FieldLabel>
-            <Label htmlFor="secteur">Secteur d'activité *</Label>
+            <Label htmlFor="secteur">Secteur d&apos;activité *</Label>
           </FieldLabel>
           <FieldContent>
             <Select
-              value={secteurValue || ""}
-              onValueChange={(value) => setValue("secteur", value)}
+              value={secteurValue ?? ""}
+              onValueChange={(value) => setValue("secteur", value, { shouldValidate: true, shouldDirty: true })}
             >
               <SelectTrigger id="secteur">
                 <SelectValue placeholder="Choisir un secteur" />
@@ -212,8 +231,8 @@ export function SocieteForm({ onSubmit, isLoading = false }: SocieteFormProps) {
         type="text"
         tabIndex={-1}
         autoComplete="off"
+        className="sr-only pointer-events-none"
         {...register("honeypot")}
-        style={{ position: "absolute", left: "-9999px", opacity: 0, pointerEvents: "none" }}
       />
 
       <Button type="submit" disabled={isLoading} className="w-full">

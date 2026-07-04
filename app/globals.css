@@ -162,6 +162,16 @@
   }
 }
 
+/* for section */
+@utility container-section {
+  width: 100%;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+  max-width: 80rem;
+  @media (min-width: 1024px) { padding-inline: 2rem; }
+}
+
+
 @utility container-page {
   width: 100%;
   margin-inline: auto;
@@ -169,6 +179,7 @@
   max-width: 80rem;
   @media (min-width: 768px) { padding-inline: 4rem; }
 }
+
 /* this is for the brand color in footer*/ 
 @utility text-gradient-brand {
   background: var(--gradient-brand);
@@ -203,5 +214,24 @@
     opacity: 1;
     transform: none;
     transition: none;
+  }
+}
+
+/* ─── Marquee Animations ─────────────────────────────────────────────────── */
+
+@keyframes marquee-x {
+  from { transform: translateX(0); }
+  to { transform: translateX(calc(-100% - var(--gap))); }
+}
+
+@keyframes marquee-y {
+  from { transform: translateY(0); }
+  to { transform: translateY(calc(-100% - var(--gap))); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [style*="marquee-x"],
+  [style*="marquee-y"] {
+    animation: none !important;
   }
 }

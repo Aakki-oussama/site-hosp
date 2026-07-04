@@ -13,7 +13,7 @@ export function Footer() {
   return (
     <footer className=" border-t border-border bg-muted">
       <div className="container-page pt-16 pb-6">
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-12">
+        <div className="grid gap-x-10 gap-y-10 md:gap-x-16 md:gap-y-12 md:grid-cols-2 lg:grid-cols-12">
           <div className="lg:col-span-4">
             <span className="font-heading text-lg font-black text-gradient-brand">
               {companyInfo.name}

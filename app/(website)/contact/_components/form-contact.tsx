@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import type { ContactFormData, ParticulierFormData, SocieteFormData } from "@/lib/validations/contact"
+import type { ContactFormData } from "@/lib/validations/contact"
 import { ParticulierForm } from "./partiel/ParticulierForm"
 import { SocieteForm } from "./partiel/SocieteForm"
 import { toast } from "sonner"

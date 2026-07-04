@@ -1,6 +1,6 @@
 "use client"
 
-import { useForm } from "react-hook-form"
+import { useForm, useWatch } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import type { ParticulierFormData } from "@/lib/validations/contact"
 import { particulierSchema } from "@/lib/validations/contact"
@@ -33,7 +33,7 @@ export function ParticulierForm({ onSubmit, isLoading = false }: ParticulierForm
   const {
     register,
     handleSubmit,
-    watch,
+    control,
     setValue,
     reset,
     formState: { errors },
@@ -42,15 +42,26 @@ export function ParticulierForm({ onSubmit, isLoading = false }: ParticulierForm
     mode: "onBlur",
     defaultValues: {
       type: "particulier",
+      ville: "",
+      nom: "",
+      telephone: "",
+      email: "",
+      objet: "",
+      message: "",
+      honeypot: "",
     },
   })
 
-  const villeValue = watch("ville")
+  const villeValue = useWatch({ control, name: "ville" })
 
   const handleSubmitForm = async (data: ParticulierFormData) => {
-    const success = await onSubmit(data)
-    if (success) {
-      reset()
+    try {
+      const success = await onSubmit(data)
+      if (success) {
+        reset({ type: "particulier" })
+      }
+    } catch (err) {
+      console.error("Unexpected error submitting form:", err)
     }
   }
 
@@ -82,6 +93,8 @@ export function ParticulierForm({ onSubmit, isLoading = false }: ParticulierForm
             <Input
               id="telephone"
               placeholder="Ex: 0770451659"
+              inputMode="tel"
+              autoComplete="tel"
               {...register("telephone")}
               aria-invalid={!!errors.telephone}
             />
@@ -99,6 +112,7 @@ export function ParticulierForm({ onSubmit, isLoading = false }: ParticulierForm
               id="email"
               type="email"
               placeholder="Ex: contact@email.com"
+              autoComplete="email"
               {...register("email")}
               aria-invalid={!!errors.email}
             />
@@ -112,7 +126,10 @@ export function ParticulierForm({ onSubmit, isLoading = false }: ParticulierForm
             <Label htmlFor="ville">Ville (optionnel)</Label>
           </FieldLabel>
           <FieldContent>
-            <Select value={villeValue || ""} onValueChange={(value) => setValue("ville", value)}>
+            <Select
+              value={villeValue ?? ""}
+              onValueChange={(value) => setValue("ville", value, { shouldValidate: true, shouldDirty: true })}
+            >
               <SelectTrigger id="ville">
                 <SelectValue placeholder="Choisir une ville" />
               </SelectTrigger>
@@ -166,8 +183,8 @@ export function ParticulierForm({ onSubmit, isLoading = false }: ParticulierForm
           type="text"
           tabIndex={-1}
           autoComplete="off"
+          className="sr-only pointer-events-none"
           {...register("honeypot")}
-          style={{ position: "absolute", left: "-9999px", opacity: 0, pointerEvents: "none" }}
         />
 
       <Button type="submit" disabled={isLoading} className="w-full">
