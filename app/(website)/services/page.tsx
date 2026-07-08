@@ -10,23 +10,23 @@ import { ClientsSection } from "./_components/clientSection"
 import { LivraisonSection } from "./_components/livraisonSection"
 
 export const metadata: Metadata = {
-  title: "Nos Services",
+  title: "Services d'hygiène professionnelle au Maroc",
   description:
-    "Découvrez nos produits de nettoyage et de désinfection professionnelle certifiés pour les établissements hospitaliers, hôteliers et industriels au Maroc.",
+    "Découvrez nos services de nettoyage, désinfection, conseil et distribution de solutions professionnelles certifiées pour les établissements de santé, hôtellerie, industrie et collectivités au Maroc.",
   keywords: [
-    "produits nettoyage professionnel Maroc",
-    "désinfectant hospitalier certifié",
-    "solutions hygiène professionnelle Maroc",
-    "produits désinfection EN NF",
-    "nettoyage industriel Maroc",
-    "hygiène hôpital Maroc",
-    "désinfection professionnelle Rabat",
-    "Polaris produits hygiène",
+    "services hygiène professionnelle Maroc",
+    "service nettoyage professionnel Rabat",
+    "désinfection professionnelle Maroc",
+    "conseil hygiène hospitalière Maroc",
+    "distribution produits hygiène Rabat",
+    "services désinfection industriels Maroc",
+    "nettoyage hospitalier Maroc",
+    "Polaris Industrie HOSP",
   ],
   openGraph: {
-    title: "Nos Services | Polaris Industrie Hosp",
+    title: "Services d'hygiène professionnelle au Maroc | Polaris Industrie HOSP",
     description:
-      "Produits de nettoyage et désinfection certifiés pour les professionnels de santé, de l'hôtellerie et de l'industrie au Maroc.",
+      "Polaris Industrie HOSP propose des services de nettoyage, désinfection, conseil et livraison de solutions professionnelles adaptées aux besoins des établissements au Maroc.",
     url: "https://polaris-industriehosp.com/services",
     siteName: "Polaris Industrie HOSP",
     locale: "fr_MA",
@@ -59,8 +59,8 @@ export default function ServicesPage() {
         <VenteSection />
         <LivraisonSection />
         <ClientsSection/>
-        <CTASection />
       </main>
+      <CTASection />
     </>
   )
 }

@@ -4,23 +4,23 @@ import { GammeClient } from "./_components/gamme-client"
 import { CTASection } from "@/components/shared/cta-button"
 
 export const metadata: Metadata = {
-  title: "Nos Gammes",
+  title: "Gammes de produits d'hygiène et de désinfection au Maroc",
   description:
-    "Découvrez nos produits de nettoyage et de désinfection professionnelle certifiés pour les établissements hospitaliers, hôteliers et industriels au Maroc.",
+    "Découvrez nos gammes de produits de nettoyage, désinfection et hygiène professionnelle conçues pour les établissements de santé, hôtellerie, industrie et collectivités au Maroc.",
   keywords: [
+    "gammes produits hygiène Maroc",
     "produits nettoyage professionnel Maroc",
-    "désinfectant hospitalier certifié",
-    "solutions hygiène professionnelle Maroc",
-    "produits désinfection EN NF",
-    "nettoyage industriel Maroc",
-    "hygiène hôpital Maroc",
-    "désinfection professionnelle Rabat",
-    "Polaris produits hygiène",
+    "désinfectant professionnel Maroc",
+    "gamme hygiène hospitalière",
+    "produits désinfection industrie Maroc",
+    "solutions hygiène professionnelle Rabat",
+    "produits de nettoyage certifiés",
+    "Polaris Industrie HOSP",
   ],
   openGraph: {
-    title: "Nos Gammes | Polaris Industrie Hosp",
+    title: "Gammes de produits d'hygiène et de désinfection au Maroc | Polaris Industrie HOSP",
     description:
-      "Produits de nettoyage et désinfection certifiés pour les professionnels de santé, de l'hôtellerie et de l'industrie au Maroc.",
+      "Explorez les gammes de produits de nettoyage et de désinfection professionnelles de Polaris Industrie HOSP pour répondre aux besoins des professionnels au Maroc.",
     url: "https://polaris-industriehosp.com/gammes",
     siteName: "Polaris Industrie HOSP",
     locale: "fr_MA",
@@ -35,7 +35,6 @@ export default function GammesPage() {
   return (
     <>
       <GammeHeader />
-
       <main>
        <GammeClient />
        <CTASection/>
