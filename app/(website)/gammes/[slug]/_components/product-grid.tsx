@@ -1,4 +1,4 @@
-import { products } from "@/data/gammes/gammes-content"
+import { products } from "@/data/product/product"
 import { ProductCard } from "./product-card"
 
 interface ProductGridProps {

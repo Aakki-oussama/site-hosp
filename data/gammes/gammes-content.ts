@@ -45,13 +45,13 @@ export const products: Product[] = [
   // ─── Gamme Médical ──────────────────────────────────────────────────────────
   {
     id: "med-1",
-    slug: "gel-hydroalcoolique-mains",
-    name: "Gel Hydroalcoolique",
-    description: "Désinfection chirurgicale et friction hygiénique des mains sans rinçage.",
-    image: "/images/services/livraison.webp",
+    slug: "megasept-sdc",
+    name: "Megasept SDC",
+    description: "Savon liquide à base de surfactifs amphotères pour lavage simple des mains.",
+    image: "/images/products/megasept-sd.webp",
     gammeSlug: "medical",
-    formats: ["100ml", "500ml", "1L", "5L"],
-    surface: ["Mains (friction cutanée hygiénique)"],
+    formats: ["500ml", "1L", "5L"],
+    surface: ["Mains", "Friction cutanée hygiénique"],
   },
   {
     id: "med-2",

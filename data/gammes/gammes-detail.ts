@@ -14,7 +14,6 @@ export type GammeDetail = {
   name: string
   description: string
   icon: LucideIcon
-  productCount: number
   usagePlaces: string[]
 }
 
@@ -22,27 +21,24 @@ export type GammeDetail = {
 
 export const gammesDetails: GammeDetail[] = [
   {
-    slug: "home",
-    name: "Gamme Home",
-    description: "Solutions d'hygiène professionnelles pour usage domestique intensif.",
-    icon: Home,
-    productCount: 3,
-    usagePlaces: ["Résidence", "Hôtel", "Home"],
-  },
-  {
     slug: "medical",
     name: "Gamme Médical",
     description: "Désinfectants certifiés pour environnements médicaux et hospitaliers.",
     icon: Stethoscope,
-    productCount: 4,
     usagePlaces: ["Hôpital", "Clinique", "Laboratoire"],
+  },
+  {
+    slug: "home",
+    name: "Gamme Home",
+    description: "Solutions d'hygiène professionnelles pour usage domestique intensif.",
+    icon: Home,
+    usagePlaces: ["Résidence", "Hôtel", "Home"],
   },
   {
     slug: "aqua",
     name: "Gamme Aqua",
     description: "Traitement et purification de l'eau pour usage industriel et collectif.",
     icon: Droplets,
-    productCount: 2,
     usagePlaces: ["Industrie", "Piscine", "Collectivité"],
   },
   {
@@ -50,7 +46,6 @@ export const gammesDetails: GammeDetail[] = [
     name: "Gamme Bio",
     description: "Formules écologiques et biodégradables pour une hygiène responsable.",
     icon: Leaf,
-    productCount: 3,
     usagePlaces: ["Restaurant", "Hôtel", "Résidence"],
   },
 ]

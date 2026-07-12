@@ -1,5 +1,6 @@
 import { GammeCard } from "./gamme-card"
 import { gammesDetails } from "@/data/gammes/gammes-detail"
+import { products } from "@/data/product/product"
 
 interface GammeGridProps {
   selected: string
@@ -22,7 +23,7 @@ export function GammeGrid({ selected }: GammeGridProps) {
             description={gamme.description}
             icon={gamme.icon}
             slug={gamme.slug}
-            productCount={gamme.productCount}
+            productCount={products.filter((p) => p.gammeSlug === gamme.slug).length}
             usagePlaces={gamme.usagePlaces}
           />
         ))}

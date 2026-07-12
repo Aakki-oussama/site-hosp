@@ -10,7 +10,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
-import type { Product } from "@/data/gammes/gammes-content"
+import type { Product } from "@/data/product/product"
 
 interface ProductCardProps {
   product: Product
@@ -19,12 +19,12 @@ interface ProductCardProps {
 
 export function ProductCard({ product, priority = false }: ProductCardProps) {
   return (
-    <Card className="group flex h-full flex-col overflow-hidden border-border/70 bg-background shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-lg">
+    <Card className="group flex h-full flex-col [--card-spacing:0px] overflow-hidden border-border/70 bg-background shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-lg">
 
       {/* Product Image */}
       <div className="relative h-52 w-full overflow-hidden bg-muted">
         <Image
-          src={product.image}
+          src={product.cardImage || product.image}
           alt={product.name}
           fill
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
@@ -51,7 +51,7 @@ export function ProductCard({ product, priority = false }: ProductCardProps) {
           {product.name}
         </CardTitle>
         <p className="text-sm leading-relaxed text-muted-foreground">
-          {product.description}
+          {product.shortDescription}
         </p>
       </CardHeader>
 

@@ -81,9 +81,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 export default async function CategoryPage({ params }: PageProps) {
   const { slug } = await params
-  const gammeExists = gammesDetails.some((g) => g.slug === slug)
+  const gamme = gammesDetails.find((g) => g.slug === slug)
 
-  if (!gammeExists) {
+  if (!gamme) {
     notFound()
   }
 

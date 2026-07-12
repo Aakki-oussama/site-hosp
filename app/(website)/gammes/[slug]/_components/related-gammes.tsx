@@ -1,5 +1,6 @@
 import { gammesDetails } from "@/data/gammes/gammes-detail"
 import { GammeCard } from "@/app/(website)/gammes/_components/gamme-card"
+import { products } from "@/data/product/product"
 
 interface RelatedGammesProps {
   currentSlug: string
@@ -7,6 +8,10 @@ interface RelatedGammesProps {
 
 export function RelatedGammes({ currentSlug }: RelatedGammesProps) {
   const related = gammesDetails.filter((g) => g.slug !== currentSlug)
+  const productCounts = products.reduce<Record<string, number>>((acc, product) => {
+    acc[product.gammeSlug] = (acc[product.gammeSlug] ?? 0) + 1
+    return acc
+  }, {})
 
   if (related.length === 0) return null
 
@@ -31,7 +36,7 @@ export function RelatedGammes({ currentSlug }: RelatedGammesProps) {
               description={gamme.description}
               icon={gamme.icon}
               slug={gamme.slug}
-              productCount={gamme.productCount}
+              productCount={productCounts[gamme.slug] ?? 0}
               usagePlaces={gamme.usagePlaces}
             />
           ))}
