@@ -31,7 +31,7 @@ export function Footer() {
               {gammes.map((g) => (
                 <li key={g.slug}>
                   <Link
-                    href={`/gamme/${g.slug}`}
+                    href={`/gammes/${g.slug}`}
                     className="group inline-flex items-center gap-2 text-sm text-foreground transition-colors"
                   >
                     <span

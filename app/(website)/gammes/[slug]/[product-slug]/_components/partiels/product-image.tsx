@@ -8,7 +8,7 @@ interface ProductImageProps {
 export function ProductImage({ product }: ProductImageProps) {
   return (
     <div className="flex items-center justify-center">
-      <div className="relative aspect-square w-full max-w-sm overflow-hidden rounded-2xl bg-muted lg:max-w-none">
+      <div className="relative aspect-[4/3] w-full max-w-sm overflow-hidden rounded-2xl bg-muted lg:max-w-none">
         <Image
           src={product.image}
           alt={product.name}

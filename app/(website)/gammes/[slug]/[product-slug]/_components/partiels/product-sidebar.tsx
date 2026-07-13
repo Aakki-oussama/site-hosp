@@ -31,7 +31,7 @@ export function ProductSidebar({ product }: ProductSidebarProps) {
 
       <div>
         <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-primary">
-          Surfaces cibles
+          Destinations d&apos;usage
         </p>
         <ul className="flex flex-col gap-2">
           {product.surface.map((s) => (

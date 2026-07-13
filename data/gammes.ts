@@ -20,7 +20,7 @@ export const gammes: Gamme[] = [
   {
     id: "medical",
     slug: "medical",
-    name: "Gamme Médical",
+    name: "Gamme MédicaL",
     description:
       "Désinfectants certifiés pour environnements médicaux et hospitaliers",
     icon: "Stethoscope",
@@ -34,15 +34,6 @@ export const gammes: Gamme[] = [
       "Traitement et purification de l'eau pour usage industriel",
     icon: "Droplets",
     color: "blue",
-  },
-  {
-    id: "med",
-    slug: "med",
-    name: "Gamme Med",
-    description:
-      "Produits de désinfection à usage médical avancé",
-    icon: "Flask",
-    color: "green",
   },
   {
     id: "bio",

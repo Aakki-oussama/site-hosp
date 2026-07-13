@@ -22,7 +22,7 @@ export function ProductCard({ product, priority = false }: ProductCardProps) {
     <Card className="group flex h-full flex-col [--card-spacing:0px] overflow-hidden border-border/70 bg-background shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-lg">
 
       {/* Product Image */}
-      <div className="relative h-52 w-full overflow-hidden bg-muted">
+      <div className="relative aspect-[4/3] overflow-hidden bg-muted">
         <Image
           src={product.cardImage || product.image}
           alt={product.name}

@@ -16,6 +16,7 @@ import { ProductImage } from "./_components/partiels/product-image"
 import { ProductInfo } from "./_components/partiels/product-info"
 import { ProductSidebar } from "./_components/partiels/product-sidebar"
 import { ProductFicheTechnique } from "./_components/partiels/product-fiche-technique"
+import { ProductBenefits } from "./_components/partiels/product-benefits"
 import{ RelatedProducts } from "@/components/shared/related-product"
 
 interface PageProps {
@@ -98,7 +99,7 @@ export default async function ProductPage({ params }: PageProps) {
       <main>
         <section className="mx-auto w-full max-w-[1400px] px-3 sm:px-4 lg:px-5 pb-12 lg:pb-16">
           <div className="grid grid-cols-1 gap-6 lg:grid-cols-12 lg:items-start lg:gap-6">
-            <div className="lg:col-span-4 lg:pr-2">
+            <div className="lg:col-span-4 lg:pr-2 lg:sticky lg:top-8">
               <ProductImage product={mergedProduct} />
             </div>
             <div className="lg:col-span-5">
@@ -113,7 +114,10 @@ export default async function ProductPage({ params }: PageProps) {
             </div>
           </div>
 
-          <div className="mt-6 lg:mt-8">
+          <div className="mt-6 lg:mt-8 flex flex-col gap-4">
+            {mergedProduct.benefits && mergedProduct.benefits.length > 0 && (
+              <ProductBenefits benefits={mergedProduct.benefits} />
+            )}
             <ProductFicheTechnique />
           </div>
         </section>

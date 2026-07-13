@@ -8,7 +8,11 @@ import {
   Users,
   Stethoscope,
   Droplets,
+  Droplet,
+  ShieldPlus,
   Hospital,
+  HandCoins,
+  HandHelping,
 } from "lucide-react"
 
 // ─── Types ────────────────────────────────────────────────────────────────────
@@ -16,6 +20,7 @@ import {
 export type Benefit = {
   icon: LucideIcon
   label: string
+  description: string
 }
 
 export type Domaine = {
@@ -58,9 +63,9 @@ export const products: Product[] = [
     formats: ["750ml", "1L", "5L"],
     surface: ["Plans de travail", "Tables", "Appareils électroménagers"],
     benefits: [
-      { icon: Droplets, label: "Nettoie efficacement" },
-      { icon: FlaskConical, label: "Dégraisse en profondeur" },
-      { icon: Building2, label: "Sans laisser de traces" },
+      { icon: Droplets, label: "Nettoie efficacement", description: "Élimine salissures et graisses du quotidien en un seul passage." },
+      { icon: FlaskConical, label: "Dégraisse en profondeur", description: "Formule concentrée qui attaque les dépôts tenaces sans abîmer les surfaces." },
+      { icon: Building2, label: "Sans laisser de traces", description: "Finition propre et brillante sur toutes les surfaces lisses." },
     ],
     domaine: [
       { icon: Building2, label: "Résidences" },
@@ -97,47 +102,79 @@ export const products: Product[] = [
     slug: "megasept-sdc",
     name: "Megasept SDC",
     shortDescription: "Savon liquide à base de surfactifs amphotères pour lavage simple des mains.",
-    fullDescription:
-      "Megasept SDC est un savon liquide professionnel destiné au lavage simple des mains eu milieu hospitalier, médical, paramédical, laboratoire, collectivité et industrie.\nSa formule à base de Cocamidopropyl Betaine, surfactif amphotére doux, associée au Sodium Lauret Sulfate, assure un nettoyage efficace, une mousse agréable et un rinçage facile, tout en respectant la peau lors des utilisation fréquentes.",
-    image: "/images/products/megasept-sd.webp",
+    fullDescription: "Megasept SDC est un savon liquide professionnel destiné au lavage simple des mains eu milieu hospitalier, médical, paramédical, laboratoire, collectivité et industrie.\nSa formule à base de Cocamidopropyl Betaine, surfactif amphotére doux, associée au Sodium Lauret Sulfate, assure un nettoyage efficace, une mousse agréable et un rinçage facile, tout en respectant la peau lors des utilisation fréquentes.",
+    image: "/images/products/Megasept-sdc.webp",
     gammeSlug: "medical",
     tags: ["Non-parfumé", "Usage fréquent", "Main sensible", "Usage professionnel"],
-    formats: ["500ml", "1L", "5L"],
-    surface: ["Mains", "Friction cutanée hygiénique"],
+    formats: ["500ml", "5L"],
+    surface: ["Mains", "Avant-bras"],
     benefits: [
-      { icon: Droplets, label: "Nettoie efficacement" },
-      { icon: FlaskConical, label: "Respecte la peau" },
-      { icon: Building2, label: "Rinçage facile" },
+      { icon: Droplets, label: "Nettoie efficacement", description: "" },
+      { icon: FlaskConical, label: "Respecte la peau", description: "" },
+      { icon: HandCoins, label: "Rinçage facile", description: "" },
+
     ],
     domaine: [
       { icon: Hospital , label: "Hôpitaux et Cliniques" },
-      { icon: Factory, label: "Industrie Agroalimentaire" },
-      { icon: Users, label: "Collectivités" },
       { icon: FlaskConical, label: "Laboratoires" },
       { icon: Stethoscope, label: "Cabinets Médicaux" },
+      { icon: Users, label: "Collectivités" },
+      { icon: Factory, label: "Industrie Agroalimentaire" },
     ],
   },
   {
     id: "med-2",
-    slug: "spray-desinfectant-surfaces",
-    name: "Spray Désinfectant Surfaces",
-    shortDescription: "Désinfectant à action rapide pour les dispositifs médicaux non invasifs et surfaces.",
-    image: "/images/services/livraison.webp",
+    slug: "Megasept-Sa",
+    name: "Megasept-Sa",
+    shortDescription: "Savon antiseptique à large spectre à base de dérivé biguanide en solution à action bactéricide, virucide et fongicide.",
+    fullDescription: "MEGASEPT SA et un savon antiseptique hydrosoluble pour le traitement hygiénique et chirurgical des main et avant-bras par lavage en milieu hospitalier, médical, paramédical, laboratoire et agroalimentaire. \nSa formule à base de dérivé biguanide maintient l'hydratation de la peau et évite l'élimanation des acides gras constitutifs.Solution moussante à large spectre.",
+    image: "/images/products/Megasept-sa.webp",
     gammeSlug: "medical",
-    tags: ["Désinfection", "Action rapide", "Médical"],
-    formats: ["750ml", "1L", "5L"],
-    surface: ["Mobilier médical", "Lits d'examen", "Plans de travail", "Surfaces inox"],
+    tags: ["Usage fréquent", "Usage professionnel", "Non parfumé", "Sans colorant"],
+    formats: ["750ml", "5L"],
+    surface: ["Mains", "Avant-bras"],
+    benefits: [
+      { icon: ShieldPlus, label: "ACTION BACTERICIDE", description: "Elimne efficacement les bactéries" },
+      { icon: ShieldPlus, label: "ACTION VIRUCIDE", description: "Actif sur les virus enveloppés." },
+      { icon: ShieldPlus, label: "ACTION LEVURICIDE", description: "Actif sur les levures et moisissures." },
+      { icon: HandCoins, label: "DOUX POUR LA PEAU", description: "Recpecter l'équilibre cutané." },
+      { icon: ShieldPlus, label: "USAGE MEDICAL", description: "Formule adaptée au milieu médical." },
+    ],
+    domaine: [
+      { icon: Hospital , label: "Hôpitaux et Cliniques" },
+      { icon: FlaskConical, label: "Laboratoires" },
+      { icon: Stethoscope, label: "Cabinets Médicaux" },
+      { icon: Users, label: "Collectivités" },
+      { icon: Factory, label: "Industrie Agroalimentaire" },
+    ],
   },
+
   {
     id: "med-3",
-    slug: "detergent-pre-desinfection",
-    name: "Détergent Pré-désinfection",
-    shortDescription: "Nettoyage et pré-désinfection de l'instrumentation médico-chirurgicale par trempage.",
-    image: "/images/services/livraison.webp",
+    slug: "Sans-Zo",
+    name: "Sans-Zo",
+    shortDescription: "Gel Sans-zo destiné à la désinfection de mains par frctions.",
+    fullDescription: "Gel HYDROALCOOLIQUE à base d'alcool éthylique au alcool propylique ou alccol isopropylique à une concentration entre 60% et 80% ou entre 550 et 700 mg/g. \nSans odeur ni parfum, contenant un agent hydratant.A action BACTERICIDE et LEVURICIDE.",
+    image: "/images/products/Sans-Zo.webp",
     gammeSlug: "medical",
-    tags: ["Décontamination", "Instrumentation", "Trempage"],
-    formats: ["1L", "5L"],
-    surface: ["Instruments médico-chirurgicaux", "Matériel d'endoscopie"],
+    tags: ["Usage fréquent", "Usage professionnel"],
+    formats: ["750ml", "5L"],
+    surface: ["Mains", "Avant-bras"],
+    benefits: [
+      { icon: ShieldPlus, label: "ACTION BACTERICIDE", description: "Elimne efficacement les bactéries" },
+      { icon: ShieldPlus, label: "ACTION VIRUCIDE", description: "Actif sur les virus enveloppés." },
+      { icon: ShieldPlus, label: "ACTION LEVURICIDE", description: "Actif sur les levures et moisissures." },
+      { icon: Droplet, label: "SANS EAU", description: "Ne nécessite ni eau ni rinçage." },
+      { icon: HandHelping, label: "SECHAGE RAPIDE", description: "Sans rinçage, utilisation rapide." },
+      { icon: ShieldPlus, label: "USAGE MEDICAL", description: "Formule adaptée au milieu médical." },
+    ],
+    domaine: [
+      { icon: Hospital , label: "Hôpitaux et Cliniques" },
+      { icon: FlaskConical, label: "Laboratoires" },
+      { icon: Stethoscope, label: "Cabinets Médicaux" },
+      { icon: Users, label: "Collectivités" },
+      { icon: Factory, label: "Industrie Agroalimentaire" },
+    ],
   },
 
 
@@ -155,9 +192,9 @@ export const products: Product[] = [
     formats: ["1kg", "5kg", "25kg"],
     surface: ["Eau de piscine", "Parois des bassins"],
     benefits: [
-      { icon: Droplets, label: "Action rapide" },
-      { icon: FlaskConical, label: "Élimine algues et bactéries" },
-      { icon: Building2, label: "Facile à doser" },
+      { icon: Droplets, label: "Action rapide", description: "Traitement choc efficace en quelques heures, même en cas de forte contamination." },
+      { icon: FlaskConical, label: "Élimine algues et bactéries", description: "Spectre large contre les micro-organismes et les proliférations algales." },
+      { icon: Building2, label: "Facile à doser", description: "Pastilles pré-dosées pour un traitement précis sans erreur de mesure." },
     ],
     domaine: [
       { icon: Building2, label: "Piscines publiques" },
@@ -202,9 +239,9 @@ export const products: Product[] = [
     formats: ["750ml", "5L"],
     surface: ["Fours", "Plaques", "Hottes", "Inox"],
     benefits: [
-      { icon: Droplets, label: "Dégraisse en profondeur" },
-      { icon: FlaskConical, label: "100% biodégradable" },
-      { icon: Building2, label: "Respecte les surfaces" },
+      { icon: Droplets, label: "Dégraisse en profondeur", description: "Actifs biosourcés puissants qui décollent les graisses cuites sans récurer." },
+      { icon: FlaskConical, label: "100% biodégradable", description: "Formule à dégradation rapide respectueuse des écosystèmes aquatiques." },
+      { icon: Building2, label: "Respecte les surfaces", description: "Compatible inox, émail, vitrocéramique et revêtements alimentaires." },
     ],
     domaine: [
       { icon: UtensilsCrossed, label: "Restauration" },
