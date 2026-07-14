@@ -15,38 +15,22 @@ function isActiveLink(pathname: string, href: string) {
 }
 
 export function Navbar() {
-  const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
   const pathname = usePathname()
-  const isHome = pathname === "/"
 
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20)
-    onScroll()
-    window.addEventListener("scroll", onScroll, { passive: true })
-    return () => window.removeEventListener("scroll", onScroll)
-  }, [])
-
-  const isTransparent = isHome && !scrolled
-
-  return (
+    return (
     <header
-      className={cn(
-        "fixed top-0 left-0 right-0 w-[100vw] z-50 transition-all duration-300",
-        scrolled || !isHome
-          ? "bg-background/95 backdrop-blur-md border-b border-border"
-          : "bg-transparent"
-      )}
-    >
+  className={cn(
+    "fixed z-50 transition-all duration-300",
+    "top-0 left-0 right-0 bg-background/90 backdrop-blur-md border-b border-border",
+    "lg:top-4 lg:left-1/2 lg:-translate-x-1/2 lg:w-[calc(100%-2rem)] lg:max-w-7xl lg:rounded-full lg:border lg:shadow-md",
+    "lg:bg-muted/50 lg:backdrop-blur-xl lg:border-white/20"
+     )}
+       >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           <Link href="/" className="flex shrink-0 items-center">
-            <span
-              className={cn(
-                "font-heading font-bold text-lg tracking-tight transition-colors",
-                isTransparent ? "text-white" : "text-gradient-brand"
-              )}
-            >
+            <span className="font-heading font-bold text-lg tracking-tight text-gradient-brand">
               {companyInfo.name}
             </span>
           </Link>
@@ -61,13 +45,9 @@ export function Navbar() {
                   href={link.href}
                   className={cn(
                     "relative px-4 py-2 text-sm font-medium transition-colors group",
-                    isTransparent
-                      ? isActive
-                        ? "text-white"
-                        : "text-white/80 hover:text-white"
-                      : isActive
-                        ? "text-primary"
-                        : "text-foreground hover:text-primary"
+                    isActive
+                      ? "text-primary"
+                      : "text-foreground hover:text-primary"
                   )}
                 >
                   {link.label}
@@ -85,10 +65,7 @@ export function Navbar() {
           <div className="hidden lg:flex items-center gap-3">
             <a
               href={`tel:${companyInfo.phone.replace(/\s/g, "")}`}
-              className={cn(
-                "flex items-center gap-1.5 text-sm font-medium transition-colors",
-                isTransparent ? "text-white/80 hover:text-white" : "text-muted-foreground hover:text-foreground"
-              )}
+              className="flex items-center gap-1.5 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
             >
               <Phone className="w-3.5 h-3.5" />
               <span>{companyInfo.phoneDisplay}</span>
@@ -105,10 +82,7 @@ export function Navbar() {
 
           <div className="lg:hidden flex items-center gap-2">
             <button
-              className={cn(
-                "p-2 rounded-md transition-colors",
-                isTransparent ? "text-white hover:bg-white/10" : "text-foreground hover:bg-muted"
-              )}
+              className="p-2 rounded-md text-foreground hover:bg-muted transition-colors"
               onClick={() => setMobileOpen(true)}
               aria-label="Ouvrir le menu"
             >

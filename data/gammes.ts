@@ -20,7 +20,7 @@ export const gammes: Gamme[] = [
   {
     id: "medical",
     slug: "medical",
-    name: "Gamme MédicaL",
+    name: "Gamme Médical",
     description:
       "Désinfectants certifiés pour environnements médicaux et hospitaliers",
     icon: "Stethoscope",

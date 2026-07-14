@@ -166,7 +166,7 @@ export function SectionHeader({
 
   // Layout config per mode
   const layoutConfig = {
-    hero:    "relative py-20 lg:py-28 overflow-hidden",
+    hero: "relative pt-25 pb-6 md:pt-25 md:pb-8 lg:pt-40 lg:pb-8 overflow-hidden",
     section: "relative py-12 lg:py-16 overflow-hidden bg-card/50 border-y border-border/20",
     simple:  "relative w-full",
   }

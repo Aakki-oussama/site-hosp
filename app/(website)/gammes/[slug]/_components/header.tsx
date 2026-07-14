@@ -12,7 +12,7 @@ export function CategoryHeader({ slug }: CategoryHeaderProps) {
   const GammeIcon = gamme.icon
 
   return (
-    <div className="container-section py-10 lg:py-14">
+    <div className="container-section pt-24 pb-10 lg:pt-38 lg:pb-14">
 
       {/* Eyebrow */}
       <p className="text-xs font-semibold uppercase tracking-widest text-foreground mb-3">

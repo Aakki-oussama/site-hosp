@@ -1,6 +1,6 @@
 export function GammeHeader() {
   return (
-    <div className="container-section py-10 lg:py-14">
+    <div className="container-section pt-24 pb-6 lg:pt-38 lg:pb-6">
 
       {/* Eyebrow */}
       <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-3">

@@ -74,7 +74,7 @@ export default async function ProductPage({ params }: PageProps) {
 
   return (
     <>
-      <div className="mx-auto w-full max-w-[1400px] px-4 sm:px-5 lg:px-6 pt-8 pb-4">
+      <div className="mx-auto w-full max-w-[1400px] px-4 sm:px-5 lg:px-6 pt-24 pb-4 lg:pt-28">
         <Breadcrumb>
           <BreadcrumbList>
             <BreadcrumbItem>
