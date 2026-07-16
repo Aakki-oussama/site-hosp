@@ -235,3 +235,32 @@
     animation: none !important;
   }
 }
+
+/*-image animation*/
+.shiny-glass {
+  position: relative;
+  overflow: hidden;
+  border-radius: inherit;
+}
+
+.shiny-glass::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.75) 35%,
+    rgba(255, 255, 255, 0.2) 50%,
+    rgba(255, 255, 255, 0.75) 65%,
+    transparent 100%
+  );
+  transform: scaleX(0.4) translateX(-100%);
+  transition: transform 0.8s ease;
+  pointer-events: none;
+}
+
+.shiny-glass:hover::after {
+  transform: scaleX(1.2) translateX(100%);
+}

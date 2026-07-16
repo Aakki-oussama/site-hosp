@@ -13,7 +13,7 @@ export function NettoyageSection() {
           {/* Image Left */}
           <div className="order-2 lg:order-none relative aspect-[4/3] w-full overflow-hidden rounded-2xl bg-muted">
             <Image
-              src="/images/services/desinfection.webp"
+              src="/images/services/nettoyage.webp"
               alt="Produits de nettoyage professionnel Polaris"
               fill
               sizes="(max-width: 768px) 100vw, 50vw"

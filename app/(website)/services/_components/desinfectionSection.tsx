@@ -37,13 +37,13 @@ export function DesinfectionSection() {
 
           {/* Image Right */}
           
-          <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl bg-background">
+          <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl bg-background shiny-glass">
             <Image
-              src="/images/services/desinfection.webp"
+              src="/images/services/desinfectant.webp"
               alt="Produits de désinfection professionnelle Polaris"
               fill
               sizes="(max-width: 768px) 100vw, 50vw"
-              className="object-cover"
+              className="object-cover transition-transform duration-500 hover:scale-105"
             />
           </div>
 

@@ -1,5 +1,8 @@
 import type { Metadata } from "next"
 import { HeroSection } from "@/app/(website)/home/_components/hero-section"
+import { StatsClients } from "./home/_components/stats/stats"
+import { AboutSection } from "./home/_components/about-section"
+import { ServicesSection } from "./home/_components/services-section"
 
 export const metadata: Metadata = {
   title: "Polaris Industrie HOSP - Hygiène et Désinfection | Maroc",
@@ -35,7 +38,10 @@ export default function HomePage() {
   return (
     <>
       <main>
-              <HeroSection />
+        <HeroSection />
+        <StatsClients />
+        <AboutSection />
+        <ServicesSection />
       </main>
     </>
   )
