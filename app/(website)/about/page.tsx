@@ -38,14 +38,11 @@ export default function AboutPage() {
   return (
     <>
       <SectionHeader
-        variant="hero"
         headingLevel="h1"
         headingId="about-heading"
-        align="left"
-        badge="À propos de nous"
+        align="center"
         title="Notre engagement pour"
         highlight="l'hygiène professionnelle"
-        description="Depuis plus de 10 ans, Polaris Industrie Hosp conçoit et distribue des solutions d'hygiène certifiées pour les établissements de santé et les professionnels."
       />
 
       <main>

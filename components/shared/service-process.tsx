@@ -1,8 +1,9 @@
 import { ChevronRight, ChevronDown } from "lucide-react"
 import type { Step } from "@/data/services/services"
+import { ReactNode } from "react"
 
 interface ServiceProcessProps {
-  title: string
+  title: ReactNode
   steps: Step[]
 }
 

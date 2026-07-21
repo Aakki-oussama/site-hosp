@@ -54,9 +54,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   const keywords = keywordsMap[slug] || ["produits hygiène professionnelle Maroc"]
 
+  const fullGammeTitle = `${gamme.title}${gamme.highlightedTitle ? ` ${gamme.highlightedTitle}` : ""}`.trim()
+
   return {
     // Le template du layout racine ajoute automatiquement "| Polaris Industrie Hosp"
-    title: gamme.name,
+    title: fullGammeTitle,
     description: gamme.description,
     keywords: [
       ...keywords,
@@ -65,7 +67,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       "fabricant désinfectants Rabat",
     ],
     openGraph: {
-      title: `${gamme.name} | Polaris Industrie Hosp`,
+      title: `${fullGammeTitle} | Polaris Industrie Hosp`,
       description: gamme.description,
       url: `https://polaris-industriehosp.com/gammes/${slug}`,
       siteName: "Polaris Industrie HOSP",

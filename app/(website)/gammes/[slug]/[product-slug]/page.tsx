@@ -74,7 +74,7 @@ export default async function ProductPage({ params }: PageProps) {
 
   return (
     <>
-      <div className="mx-auto w-full max-w-[1400px] px-4 sm:px-5 lg:px-6 pt-24 pb-4 lg:pt-28">
+      <div className="mx-auto w-full max-w-[1400px] px-4 sm:px-5 lg:px-6 pt-24 pb-4 lg:pt-38">
         <Breadcrumb>
           <BreadcrumbList>
             <BreadcrumbItem>
@@ -85,7 +85,7 @@ export default async function ProductPage({ params }: PageProps) {
             <BreadcrumbSeparator />
             <BreadcrumbItem>
               <BreadcrumbLink asChild>
-                <Link href={`/gammes/${slug}`}>{gamme.name}</Link>
+                <Link href={`/gammes/${slug}`}>{`${gamme.title}${gamme.highlightedTitle ? ` ${gamme.highlightedTitle}` : ""}`.trim()}</Link>
               </BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator />
@@ -105,7 +105,7 @@ export default async function ProductPage({ params }: PageProps) {
             <div className="lg:col-span-5">
               <ProductInfo
                 product={mergedProduct}
-                gammeName={gamme.name}
+                gammeName={`${gamme.title}${gamme.highlightedTitle ? ` ${gamme.highlightedTitle}` : ""}`.trim()}
                 gammeIcon={gamme.icon}
               />
             </div>

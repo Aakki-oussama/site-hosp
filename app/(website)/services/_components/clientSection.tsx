@@ -1,6 +1,7 @@
 "use client"
 
 import { Marquee } from "@/components/shared/marque"
+import { Badge } from "@/components/ui/badge"
 import { clientSectors } from "@/data/client"
 
 export function ClientsSection() {
@@ -10,16 +11,19 @@ export function ClientsSection() {
 
         {/* Header */}
         <div className="mb-12 max-w-2xl mx-auto text-center">
-          <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-3">
+          <Badge variant="subtle" className="mb-3 gap-2">
+            <span className="size-2 rounded-full bg-brand-green" />
             Nos clients
-          </p>
+          </Badge>
 
-          <h2 className="font-heading text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+          <h2 className="feature-title">
             Des solutions pour{" "}
-            <span className="text-primary">chaque secteur</span>
+            <span className="text-gradient">
+              chaque secteur
+            </span>
           </h2>
 
-          <p className="mt-4 text-base text-muted-foreground leading-relaxed">
+          <p className="mt-4 section-description !text-foreground/80 ">
             Nous accompagnons des professionnels de secteurs variés avec des
             produits adaptés à leurs exigences spécifiques.
           </p>

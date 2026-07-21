@@ -1,10 +1,13 @@
 import Image from "next/image"
 import { nettoyageFeatures, nettoyageSteps } from "@/data/services/services"
 import { ServiceProcess } from "@/components/shared/service-process"
+import { ServiceFeatureCard } from "@/components/shared/cards/service-feature-card"
+import { Badge } from "@/components/ui/badge"
+import { ShieldCheck } from "@/components/shared/icons"
 
 export function NettoyageSection() {
   return (
-    <section className="py-12 lg:py-24 bg-background">
+    <section className="py-12 lg:py-16">
       <div className="container-section">
 
         {/* Image + Text */}
@@ -23,14 +26,17 @@ export function NettoyageSection() {
 
           {/* Text Right */}
           <div>
-            <p className="order-1 lg:order-nonetext-xs font-semibold uppercase tracking-widest text-primary mb-3">
+            <Badge variant="subtle" className="mb-3 gap-2">
+              <ShieldCheck aria-hidden="true" />
               Nettoyage
-            </p>
-            <h2 className="font-heading text-3xl font-bold tracking-tight text-foreground sm:text-4xl mb-6">
+            </Badge>
+            <h2 className="h-title mb-6">
               Produits de nettoyage{" "}
-              <span className="text-primary">haute performance</span>
+              <span className="text-gradient">
+                haute performance
+              </span>
             </h2>
-            <p className="text-base text-foreground leading-relaxed mb-8">
+            <p className="section-description mb-4">
               Nos produits de nettoyage sont formulés pour répondre aux exigences
               des environnements professionnels les plus exigeants. Efficaces,
               concentrés et adaptés à une utilisation intensive quotidienne.
@@ -38,23 +44,32 @@ export function NettoyageSection() {
 
             {/* Features */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {nettoyageFeatures.map(({ icon: Icon, label, description }) => (
-                <div key={label} className="flex items-start gap-3 p-4 rounded-xl bg-muted border border-border">
-                  <div className="inline-flex items-center justify-center size-8 rounded-lg bg-primary/10 shrink-0">
-                    <Icon className="size-4 text-primary" />
-                  </div>
-                  <div>
-                    <p className="text-sm font-semibold text-foreground">{label}</p>
-                    <p className="text-xs text-foreground mt-0.5">{description}</p>
-                  </div>
-                </div>
+              {nettoyageFeatures.map(({ icon, label, description }, index) => (
+                <ServiceFeatureCard
+                  key={label}
+                  icon={icon}
+                  title={label}
+                  description={description}
+                  number={index + 1}
+                  variant="green"
+                />
               ))}
             </div>
           </div>
         </div>
 
         {/* Process */}
-        <ServiceProcess title="Notre processus" steps={nettoyageSteps} />
+        <ServiceProcess
+          title={
+            <>
+              Notre{" "}
+              <span className="text-gradient">
+                processus
+              </span>
+            </>
+          }
+          steps={nettoyageSteps}
+        />
 
       </div>
     </section>

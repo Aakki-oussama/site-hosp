@@ -22,26 +22,26 @@ export function RelatedProducts({ currentSlug, gammeSlug }: RelatedProductsProps
       <div className="mx-auto w-full max-w-[1400px] px-4 sm:px-5 lg:px-6">
 
         {/* Header */}
-<div className="flex items-center justify-between mb-8">
-  <div>
-    <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-3">
-      Dans la même gamme
-    </p>
-    <h2 className="font-heading text-2xl font-bold text-foreground">
-      Autres produits
-    </h2>
-  </div>
+        <div className="flex items-center justify-between mb-8">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-3">
+              Dans la même gamme
+            </p>
+            <h2 className="font-heading text-2xl font-bold text-foreground">
+              Autres produits
+            </h2>
+          </div>
 
-  {/* Back button */}
-  <Link
-    href={`/gammes`}
-    className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline shrink-0"
-  >
-    Voir tous les gammes
-    <ArrowRight className="h-4 w-4" />
-  </Link>
-</div>
-        
+          {/* Back button */}
+          <Link
+            href={`/gammes`}
+            className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline shrink-0"
+          >
+            Voir tous les gammes
+            <ArrowRight className="h-4 w-4" />
+          </Link>
+        </div>
+
 
         {/* Horizontal scroll strip */}
         <div className="overflow-x-auto pb-4 scrollbar-hide">

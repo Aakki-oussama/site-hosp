@@ -23,7 +23,7 @@ export function AboutProgress() {
           <Progress
             value={value}
             aria-label={`${label}: ${value}%`}
-            className="h-2 bg-muted md:h-2.5 [&_[data-slot=progress-indicator]]:bg-brand-green"
+            className="h-2 bg-muted md:h-2.5 [&_[data-slot=progress-indicator]]:bg-primary"
           />
         </div>
       ))}

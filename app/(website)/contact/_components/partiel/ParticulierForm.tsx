@@ -177,15 +177,16 @@ export function ParticulierForm({ onSubmit, isLoading = false }: ParticulierForm
           </FieldContent>
         </Field>
       </FieldGroup>
-      
+
       {/* Honeypot */}
-        <input
-          type="text"
-          tabIndex={-1}
-          autoComplete="off"
-          className="sr-only pointer-events-none"
-          {...register("honeypot")}
-        />
+      <input
+        type="text"
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+        className="pointer-events-none absolute left-[-9999px] h-0 w-0 opacity-0"
+        {...register("honeypot")}
+      />
 
       <Button type="submit" disabled={isLoading} className="w-full">
         {isLoading ? "Envoi en cours..." : "Envoyer ma demande"}

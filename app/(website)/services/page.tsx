@@ -41,14 +41,11 @@ export default function ServicesPage() {
   return (
     <>
       <SectionHeader
-        variant="hero"
         headingLevel="h1"
         headingId="services-heading"
-        align="left"
-        badge="Nos Services"
+        align="center"
         title="Des solutions d'hygiène"
         highlight="certifiées et fiables"
-        description="Polaris Industrie Hosp conçoit et distribue des produits de nettoyage et de désinfection professionnelle adaptés aux exigences des établissements de santé, hôteliers et industriels au Maroc."
       />
 
       <main>

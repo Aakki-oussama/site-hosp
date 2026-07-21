@@ -1,3 +1,5 @@
+import { ShieldCheck } from "@/components/shared/icons"
+import { Badge } from "@/components/ui/badge"
 import { gammesDetails } from "@/data/gammes/gammes-detail"
 
 interface CategoryHeaderProps {
@@ -15,17 +17,23 @@ export function CategoryHeader({ slug }: CategoryHeaderProps) {
     <div className="container-section pt-24 pb-10 lg:pt-38 lg:pb-14">
 
       {/* Eyebrow */}
-      <p className="text-xs font-semibold uppercase tracking-widest text-foreground mb-3">
+      <Badge variant="subtle" className="mb-3 gap-2">
+        <ShieldCheck aria-hidden="true" />
         Gamme Polaris industrie hosp
-      </p>
+      </Badge>
 
       {/* Title + Icon */}
       <div className="flex items-center gap-3 mb-4">
         <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10">
           <GammeIcon className="size-5 text-primary" />
         </div>
-        <h1 className="font-heading text-3xl font-bold tracking-tight text-primary sm:text-4xl">
-          {gamme.name}
+        <h1 className="feature-title">
+          {gamme.title}{" "}
+          {gamme.highlightedTitle && (
+            <span className="text-gradient">
+              {gamme.highlightedTitle}
+            </span>
+          )}
         </h1>
       </div>
 

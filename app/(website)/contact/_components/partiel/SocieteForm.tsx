@@ -226,15 +226,15 @@ export function SocieteForm({ onSubmit, isLoading = false }: SocieteFormProps) {
           </FieldContent>
         </Field>
       </FieldGroup>
-            {/* Honeypot */}
+      {/* Honeypot */}
       <input
         type="text"
         tabIndex={-1}
         autoComplete="off"
-        className="sr-only pointer-events-none"
+        aria-hidden="true"
+        className="pointer-events-none absolute left-[-9999px] h-0 w-0 opacity-0"
         {...register("honeypot")}
       />
-
       <Button type="submit" disabled={isLoading} className="w-full">
         {isLoading ? "Envoi en cours..." : "Envoyer ma demande"}
       </Button>

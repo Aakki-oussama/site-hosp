@@ -2,7 +2,6 @@ import Image from "next/image"
 import { HeroBadge } from "./hero/hero-badge"
 import { HeroText } from "./hero/hero-text"
 import { HeroCta } from "./hero/hero-cta"
-import { AvatarGroupCountExample } from "./hero/avatar"
 
 export function HeroSection() {
   return (
@@ -15,6 +14,7 @@ export function HeroSection() {
           alt="Polaris Industrie Hosp — Hygiène professionnelle au Maroc"
           fill
           priority
+          fetchPriority="high"
           sizes="100vw"
           className="object-cover"
         />
@@ -25,11 +25,10 @@ export function HeroSection() {
       </div>
 
       {/* Content */}
-      <div className="container-section pb-16 lg:pb-24 pt-32 flex flex-col gap-4">
+      <div className="container-section pb-16 lg:pb-24 pt-40 flex flex-col gap-5">
         <HeroBadge />
         <HeroText />
         <HeroCta />
-        <AvatarGroupCountExample />
       </div>
 
     </section>

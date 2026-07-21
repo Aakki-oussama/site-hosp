@@ -8,13 +8,15 @@ export type UsagePlace = {
   icon: LucideIcon
 }
 
-
 export type GammeDetail = {
   slug: string
-  name: string
+  title: string
+  highlightedTitle?: string
   description: string
   icon: LucideIcon
   usagePlaces: string[]
+  /** Cover image for home / marketing cards — path under /public */
+  image: string
 }
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
@@ -22,30 +24,41 @@ export type GammeDetail = {
 export const gammesDetails: GammeDetail[] = [
   {
     slug: "medical",
-    name: "Gamme Médical",
+    title: "Gamme",
+    highlightedTitle: "Médical",
     description: "Désinfectants certifiés pour environnements médicaux et hospitaliers.",
     icon: Stethoscope,
-    usagePlaces: ["Hôpital", "Clinique", "Laboratoire"],
+    usagePlaces: ["Hôpital", "Clinique", "Laboratoires"],
+    image: "/images/gamme/medical-1.webp",
   },
   {
     slug: "home",
-    name: "Gamme Home",
+    title: "Gamme",
+    highlightedTitle: "Home",
     description: "Solutions d'hygiène professionnelles pour usage domestique intensif.",
     icon: Home,
     usagePlaces: ["Résidence", "Hôtel", "Home"],
+    // TODO: replace with /images/gammes/home.webp
+    image: "/images/products/Megasept-sa.webp",
   },
   {
     slug: "aqua",
-    name: "Gamme Aqua",
+    title: "Gamme",
+    highlightedTitle: "Aqua",
     description: "Traitement et purification de l'eau pour usage industriel et collectif.",
     icon: Droplets,
     usagePlaces: ["Industrie", "Piscine", "Collectivité"],
+    // TODO: replace with /images/gammes/aqua.webp
+    image: "/images/products/Sans-zo.webp",
   },
   {
     slug: "bio",
-    name: "Gamme Bio",
+    title: "Gamme",
+    highlightedTitle: "Bio",
     description: "Formules écologiques et biodégradables pour une hygiène responsable.",
     icon: Leaf,
     usagePlaces: ["Restaurant", "Hôtel", "Résidence"],
+    // TODO: replace with /images/gammes/bio.webp
+    image: "/images/products/Megasept-sdc.webp",
   },
 ]

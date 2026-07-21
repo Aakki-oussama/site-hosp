@@ -1,5 +1,3 @@
-"use client"
-
 import { mapConfig } from "@/data/contact/map"
 
 export function MapContact() {

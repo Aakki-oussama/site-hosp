@@ -44,10 +44,15 @@ export function FormContact() {
     <div className="space-y-8">
       {/* Form Title & Subtitle */}
       <div className="space-y-2">
-        <h2 className="text-3xl font-bold tracking-tight text-foreground font-heading">
-          Envoyer un message
+        <h2 className="h-title"
+        >
+           Envoyer un {" "}
+           <span className="text-gradient">
+             message
+           </span>{" "}
+           .
         </h2>
-        <p className="text-muted-foreground text-sm">
+        <p className="section-description">
           Remplissez le formulaire, un expert vous répondra sous 24h.
         </p>
       </div>

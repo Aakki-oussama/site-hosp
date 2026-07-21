@@ -1,20 +1,27 @@
 import { valeurs, type Valeur } from "@/data/about/valus"
-import { Icon } from "@/components/shared/icons"
+import { Icon, ShieldCheck } from "@/components/shared/icons"
+import { Badge } from "@/components/ui/badge"
 
 export function ValuesSection() {
   return (
-    <section className="relative bg-background py-20 lg:py-24">
+    <section className="relative bg-background py-12 lg:py-16">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
 
         {/* Section Title */}
         <div className="mb-12 max-w-2xl">
-          <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-3">
+          <Badge variant="subtle" className="mb-3 gap-2">
+            <ShieldCheck aria-hidden="true" />
             Ce qui nous définit
-          </p>
-          <h2 className="font-heading text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-            Nos Valeurs
+          </Badge>
+          <h2 className="h-title"
+          >
+            Nos {" "}
+            <span className="text-gradient">
+              Valeurs
+            </span>{" "}
+            .
           </h2>
-          <p className="mt-4 text-base text-muted-foreground leading-relaxed">
+          <p className="section-description mp-2">
             Les principes qui guident notre engagement au quotidien dans la fabrication et la distribution de nos solutions d&apos;hygiène.
           </p>
         </div>

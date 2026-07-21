@@ -5,13 +5,13 @@ import {
   Award,
   BadgeCheck,
 } from "lucide-react";
-
+import { Badge } from "@/components/ui/badge"
 import { companyInfo } from "@/config/infos";
 import { Button } from "@/components/ui/button";
 
 export function CTASection() {
   return (
-    <section className="relative overflow-hidden py-20 lg:py-24">
+    <section className="relative overflow-hidden py-16">
       {/* Background */}
       <div className="absolute inset-0 -z-10 bg-background" />
 
@@ -26,13 +26,14 @@ export function CTASection() {
       />
 
       <div className="mx-auto max-w-4xl px-6 text-center">
-        <p className="text-xs font-semibold uppercase tracking-[0.35em] text-primary">
+        <Badge variant="subtle" className="gap-2">
+          <span className="size-2 rounded-full bg-brand-green" />
           Parlons de votre projet
-        </p>
+        </Badge>
 
-        <h2 className="mt-6 font-heading text-4xl font-bold tracking-tight lg:text-5xl">
+        <h2 className="mt-6 feature-title">
           Besoin d&apos;une solution{" "}
-          <span className="text-primary">
+          <span className="text-gradient">
             d&apos;hygiène professionnelle
           </span>{" "}
           ?
@@ -45,35 +46,35 @@ export function CTASection() {
         </p>
 
         {/* Trust points */}
-<div className="mt-8 flex flex-wrap items-start justify-center gap-8">
-  <div className="flex items-start gap-3 text-left">
-    <BadgeCheck className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" />
+        <div className="mt-8 flex flex-wrap items-start justify-center gap-8">
+          <div className="flex items-start gap-3 text-left">
+            <BadgeCheck className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" />
 
-    <div>
-      <p className="text-sm font-semibold text-foreground">
-        Devis personnalisé
-      </p>
+            <div>
+              <p className="text-sm font-semibold text-foreground">
+                Devis personnalisé
+              </p>
 
-      <p className="text-xs text-muted-foreground">
-        Adapté à vos volumes
-      </p>
-    </div>
-  </div>
+              <p className="text-xs text-muted-foreground">
+                Adapté à vos volumes
+              </p>
+            </div>
+          </div>
 
-  <div className="flex items-start gap-3 text-left">
-    <Award className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" />
+          <div className="flex items-start gap-3 text-left">
+            <Award className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" />
 
-    <div>
-      <p className="text-sm font-semibold text-foreground">
-        Certifications ISO
-      </p>
+            <div>
+              <p className="text-sm font-semibold text-foreground">
+                Certifications ISO
+              </p>
 
-      <p className="text-xs text-muted-foreground">
-        ISO 9001 & ISO 13485
-      </p>
-    </div>
-  </div>
-</div>
+              <p className="text-xs text-muted-foreground">
+                ISO 9001 & ISO 13485
+              </p>
+            </div>
+          </div>
+        </div>
         {/* CTA Buttons */}
         <div className="mt-8 flex flex-col items-center justify-center gap-6 sm:flex-row">
           <Button asChild size="lg">

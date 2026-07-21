@@ -68,7 +68,7 @@ export function ProductCard({ product, priority = false }: ProductCardProps) {
       </CardContent>
 
       {/* Card Footer — always at bottom */}
-      <CardFooter className="px-5 pb-4 pt-3">
+      <CardFooter className="px-5 pb-4 pt-3 bg-background">
         <Button
           asChild
           variant="default"

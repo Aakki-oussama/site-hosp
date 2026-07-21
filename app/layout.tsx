@@ -1,24 +1,24 @@
 import type { Metadata } from "next";
-import { Montserrat, Instrument_Sans } from "next/font/google";
+import { Instrument_Sans, Montserrat } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 
-const instrumentSans = Instrument_Sans({subsets:['latin'],variable:'--font-sans'});
-
-const geistSans = Montserrat({
+const montserrat = Montserrat({
   variable: "--font-heading",
   subsets: ["latin"],
+  display: "swap",
 });
 
-const geistMono = Instrument_Sans({
+const instrumentSans = Instrument_Sans({
   variable: "--font-sans",
   subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
   title: {
-    template: "%s | Polaris Industrie Hosp",
     default: "Polaris Industrie HOSP - Hygiène et Désinfection | Maroc",
+    template: "%s | Polaris Industrie Hosp",
   },
   description: "Leader marocain de l'hygiène et de la désinfection professionnelle.",
 };
@@ -31,7 +31,7 @@ export default function RootLayout({
   return (
     <html
       lang="fr"
-      className={cn("h-full", "antialiased", geistSans.variable, geistMono.variable, "font-sans", instrumentSans.variable)}
+      className={cn("h-full", "antialiased", montserrat.variable, instrumentSans.variable)}
     >
       <body className="min-h-full flex flex-col">{children}</body>
     </html>

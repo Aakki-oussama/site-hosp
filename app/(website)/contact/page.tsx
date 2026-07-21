@@ -1,11 +1,12 @@
 import type { Metadata } from "next"
 import { SectionHeader } from "@/components/shared/header-site/section-header"
 import { companyInfo } from "@/config/infos"
-import { ContactInfo } from "./_components/info-contact"
+import { ListInfo } from "./_components/list-info"
 import { BusinessHours } from "./_components/timer"
 import { FormContact } from "./_components/form-contact"
-import { FAQContact } from "./_components/faq-contact"
+import { FAQContact } from "@/components/shared/faq-contact"
 import { MapContact } from "./_components/map-contact"
+import { Toaster } from "sonner"
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -36,46 +37,31 @@ export default function ContactPage() {
   return (
     <>
       <SectionHeader
-        variant="hero"
-        badge="Contactez-nous"
         title="Parlons de vos"
         highlight="besoins"
-        description={
-          <>
-            Demandez un devis, posez vos questions ou sollicitez un accompagnement pour vos
-            projets d&apos;hygiène et de désinfection professionnelle au{" "}
-            <span className="font-medium text-primary">Maroc</span>.
-          </>
-        }
-        note={
-          <>
-            Notre équipe vous répond dans les{" "}
-            <span className="font-medium text-primary">meilleurs délais</span>.
-          </>
-        }
         headingLevel="h1"
         headingId="contact-heading"
-        align="left"
+        align="center"
+
       />
-      
+
       <main className="max-w-7xl mx-auto px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16">
           {/* Left: Form (60%) */}
           <div className="lg:col-span-3 space-y-8">
-            <FormContact />
+            { <FormContact /> }
             <MapContact />
           </div>
 
           {/* Right: Contact Info (40%) */}
           <div className="lg:col-span-2 space-y-8">
-            <ContactInfo />
+            <ListInfo />
             <BusinessHours />
           </div>
         </div>
       </main>
-
+      <Toaster richColors closeButton position="top-right" />
       <FAQContact />
     </>
   )
 }
-    

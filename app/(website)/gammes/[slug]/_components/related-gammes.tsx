@@ -1,5 +1,5 @@
+import { CardGamme } from "@/components/shared/card-gamme/card-gamme"
 import { gammesDetails } from "@/data/gammes/gammes-detail"
-import { GammeCard } from "@/app/(website)/gammes/_components/gamme-card"
 import { products } from "@/data/product/product"
 
 interface RelatedGammesProps {
@@ -30,12 +30,14 @@ export function RelatedGammes({ currentSlug }: RelatedGammesProps) {
         {/* Cards */}
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
           {related.map((gamme) => (
-            <GammeCard
+            <CardGamme
               key={gamme.slug}
-              title={gamme.name}
+              image={gamme.image}
+              title={gamme.title}
+              highlightedTitle={gamme.highlightedTitle}
               description={gamme.description}
               icon={gamme.icon}
-              slug={gamme.slug}
+              href={`/gammes/${gamme.slug}`}
               productCount={productCounts[gamme.slug] ?? 0}
               usagePlaces={gamme.usagePlaces}
             />

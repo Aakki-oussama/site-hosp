@@ -29,7 +29,10 @@ export function GammeTabs({ selected, onSelect }: GammeTabsProps) {
                 value={gamme.slug}
                 className="px-4 py-2 text-sm whitespace-nowrap"
               >
-                {gamme.name}
+                {gamme.title}{" "}
+                {gamme.highlightedTitle && (
+                  <span className="text-gradient">{gamme.highlightedTitle}</span>
+                )}
               </TabsTrigger>
             ))}
           </TabsList>

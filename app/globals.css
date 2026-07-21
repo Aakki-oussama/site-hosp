@@ -146,13 +146,18 @@
 @layer base {
   * {
     @apply border-border outline-ring/50;
-    }
+  }
+
   body {
-    @apply bg-background text-foreground;
-    }
+    @apply bg-background text-foreground font-sans;
+  }
+
   html {
-    @apply font-sans;
-    }
+    @apply font-sans;  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
 }
 
 @layer utilities {
@@ -188,7 +193,6 @@
   color: transparent;
 }
 
-/* ─── Timeline Scroll Animations ─────────────────────────────────────────── */
 
 /* ─── Timeline Animations ──────────────────────────────── */
 
@@ -264,3 +268,42 @@
 .shiny-glass:hover::after {
   transform: scaleX(1.2) translateX(100%);
 }
+
+/* for text & color of the test*/
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary to-brand-green bg-clip-text text-transparent;
+  }
+}
+
+@layer utilities {
+
+.home-title {
+  @apply font-heading text-3xl font-bold tracking-tight leading-tight lg:text-4xl;
+}
+
+  .feature-title {
+    @apply font-heading text-4xl font-bold tracking-tight lg:text-5xl;
+  }
+
+  .feature-item {
+  @apply text-base font-medium leading-6 text-foreground;
+}
+  .h-title {
+   @apply font-heading text-3xl font-bold tracking-tight leading-tight;
+  }
+
+  .section-description {
+  @apply text-base leading-7 text-muted-foreground;
+}
+
+.card-description {
+  @apply text-sm leading-6 text-muted-foreground;
+}
+
+  .section-badge {
+    @apply text-xs font-semibold uppercase tracking-widest text-primary;
+  }
+}
+

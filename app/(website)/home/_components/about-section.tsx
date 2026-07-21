@@ -9,9 +9,10 @@ import { AboutProgress } from "./about/about-progress"
 
 export function AboutSection() {
   return (
-    <section className="bg-surface py-14 md:py-16 lg:py-20">
+    <section className="bg-surface py-12">
       <div className="container-section">
-        <div className="grid items-start gap-2 md:gap-4 lg:grid-cols-2 lg:items-stretch lg:gap-16 xl:gap-4">
+        <div className="grid items-start gap-2 md:gap-4 lg:grid-cols-2 lg:items-stretch lg:gap-16">
+
           {/* Left — image placeholders */}
           <AboutImages />
 

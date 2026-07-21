@@ -1,22 +1,28 @@
 import { conceptionFeatures, conceptionSteps } from "@/data/services/services"
 import { ServiceProcess } from "@/components/shared/service-process"
-import { ServiceCard } from "@/components/shared/service-card"
+import { ServiceFeatureCard } from "@/components/shared/cards/service-feature-card"
+import { Badge } from "@/components/ui/badge"
+import { ShieldCheck } from "@/components/shared/icons"
 
 export function ConceptionSection() {
   return (
-    <section className="py-20 lg:py-24 bg-background">
+    <section className="py-12 lg:py-16 bg-background">
       <div className="container-section">
 
         {/* Header */}
         <div className="mb-12 max-w-2xl">
-          <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-3">
+          <Badge variant="subtle" className="mb-3 gap-2">
+            <ShieldCheck aria-hidden="true" />
             Conception & Production
-          </p>
-          <h2 className="font-heading text-3xl font-bold tracking-tight text-foreground sm:text-4xl mb-4">
+          </Badge>
+
+          <h2 className="h-title mb-4">
             Fabrication{" "}
-            <span className="text-primary">haute performance</span>
+            <span className="text-gradient">
+              haute performance
+            </span>
           </h2>
-          <p className="text-base text-foreground leading-relaxed">
+          <p className="section-description mb-4">
             Polaris Industrie Hosp conçoit et fabrique ses propres produits. De la
             formulation en laboratoire jusqu&apos;au conditionnement final, chaque
             étape est maîtrisée pour garantir une qualité constante.
@@ -25,13 +31,30 @@ export function ConceptionSection() {
 
         {/* Features */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          {conceptionFeatures.map(({ icon, label, description }) => (
-            <ServiceCard key={label} icon={icon} label={label} description={description} />
-          ))}
-        </div>
+          {conceptionFeatures.map(({ icon, label, description }, index) => (
+                <ServiceFeatureCard
+                key={label}
+                icon={icon}
+                title={label}
+                description={description}
+                number={index + 1}
+                variant="green"
+              />
+            ))}
+          </div>
 
         {/* Process */}
-        <ServiceProcess title="De la formule au produit fini" steps={conceptionSteps} />
+        <ServiceProcess
+          title={
+            <>
+              Notre{" "}
+              <span className="text-gradient">
+                processus
+              </span>
+            </>
+          }
+          steps={conceptionSteps}
+        />
 
       </div>
     </section>

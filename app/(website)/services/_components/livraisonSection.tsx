@@ -1,7 +1,9 @@
 import Image from "next/image"
 import { livraisonFeatures, livraisonSteps } from "@/data/services/services"
 import { ServiceProcess } from "@/components/shared/service-process"
-import { ServiceCard } from "@/components/shared/service-card"
+import { ServiceFeatureCard } from "@/components/shared/cards/service-feature-card"
+import { Badge } from "@/components/ui/badge"
+import { ShieldCheck } from "@/components/shared/icons"
 
 export function LivraisonSection() {
   return (
@@ -26,30 +28,51 @@ export function LivraisonSection() {
           <div>
 
             {/* Header */}
-            <p className="order-1 lg:order-none text-xs font-semibold uppercase tracking-widest text-primary mb-3">
+            <Badge variant="subtle" className="mb-3 gap-2">
+              <ShieldCheck aria-hidden="true" />
               Livraison & Logistique
-            </p>
-            <h2 className="font-heading text-3xl font-bold tracking-tight text-foreground sm:text-4xl mb-4">
+            </Badge>
+
+            <h2 className="h-title mb-4">
               Rapide, fiable,{" "}
-              <span className="text-primary">partout au Maroc</span>
+              <span className="text-gradient">
+                partout au Maroc
+              </span>
             </h2>
-            <p className="text-base text-muted-foreground leading-relaxed mb-8">
+            <p className="section-description mb-8">
               Nous assurons la livraison de vos produits d&apos;hygiène et de
               désinfection sur l&apos;ensemble du territoire marocain.
             </p>
 
             {/* Cards 2x2 */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {livraisonFeatures.map(({ icon, label, description }) => (
-                <ServiceCard key={label} icon={icon} label={label} description={description} />
+              {livraisonFeatures.map(({ icon, label, description }, index) => (
+                <ServiceFeatureCard
+                  key={label}
+                  icon={icon}
+                  title={label}
+                  description={description}
+                  number={index + 1}
+                  variant="green"
+                />
               ))}
             </div>
-
           </div>
+
         </div>
 
         {/* Process */}
-        <ServiceProcess title="De la commande à la livraison" steps={livraisonSteps} />
+        <ServiceProcess
+          title={
+            <>
+              Notre{" "}
+              <span className="text-gradient">
+                processus
+              </span>
+            </>
+          }
+          steps={livraisonSteps}
+        />
 
       </div>
     </section>

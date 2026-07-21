@@ -3,6 +3,8 @@
 import { useEffect, useRef } from "react"
 import { cn } from "@/lib/utils"
 import { timeline } from "@/data/about/timeline"
+import { Badge } from "@/components/ui/badge"
+import { ShieldCheck } from "@/components/shared/icons"
 
 export function TimelineSection() {
   const sectionRef = useRef<HTMLElement>(null)
@@ -30,22 +32,26 @@ export function TimelineSection() {
   return (
     <section
       ref={sectionRef}
-      className="bg-background py-12 lg:py-24"
+      className="bg-background py-12 lg:py-16"
       aria-labelledby="timeline-heading"
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Header */}
         <header className="mx-auto mb-16 max-w-2xl text-center">
-          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-primary">
-            Depuis 2010
-          </p>
+          <Badge variant="subtle" className="mb-3 gap-2">
+            <ShieldCheck aria-hidden="true" />
+            Depuis 2022
+          </Badge>
           <h2
             id="timeline-heading"
-            className="font-heading text-3xl font-bold tracking-tight sm:text-4xl"
+            className="h-title"
           >
-            Notre Parcours
+            Notre{" "}
+            <span className="text-gradient">
+              Parcours
+            </span>
           </h2>
-          <p className="mt-4 leading-7 text-muted-foreground">
+          <p className="section-description mt-4">
             De notre fondation à aujourd&apos;hui, une croissance portée par
             l&apos;expertise et la confiance de nos partenaires.
           </p>

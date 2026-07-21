@@ -1,8 +1,5 @@
-"use client"
-
 import { faqs } from "@/data/contact/faq"
 import { Badge } from "@/components/ui/badge"
-import { Separator } from "@/components/ui/separator"
 import { Icon, HelpCircle } from "@/components/shared/icons"
 import {
   Accordion,
@@ -10,24 +7,30 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion"
+import { cn } from "@/lib/utils"
 
-export function FAQContact() {
+interface FAQContactProps {
+  className?: string
+}
+
+export function FAQContact({ className }: FAQContactProps) {
   return (
-    <section className="w-full bg-muted/30 py-20">
+    <section className={cn("w-full bg-surface py-12 lg:py-16", className)}>
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12 space-y-6">
-            <div className="flex justify-center">
-              <Separator className="w-16 h-0.5 bg-primary/40" />
-            </div>
-            <Badge className="gap-1.5 px-3 py-1 h-auto text-sm font-medium rounded-full bg-primary/10 text-primary border border-primary/20 hover:bg-primary/15 transition-colors">
+              <Badge variant="subtle">
               <Icon icon={HelpCircle} size="sm" color="primary" />
               <span>Foire aux questions</span>
             </Badge>
-            <h2 className="text-3xl font-heading font-bold tracking-tight text-foreground sm:text-4xl">
-              Questions Fréquentes
+            <h2 className="h-title">
+               Questons{" "}
+          <span className="text-gradient">
+            Fréquemment
+          </span>
+          .
             </h2>
-            <p className="text-muted-foreground max-w-xl mx-auto text-base">
+            <p className="section-description">
               Retrouvez les réponses aux questions les plus posées sur le traitement de vos commandes, nos certifications et nos solutions d&apos;hygiène.
             </p>
           </div>

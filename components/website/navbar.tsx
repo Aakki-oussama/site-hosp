@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { Menu, Phone } from "lucide-react"
@@ -22,7 +22,7 @@ export function Navbar() {
     <header
   className={cn(
     "fixed z-50 transition-all duration-300",
-    "top-0 left-0 right-0 bg-background/90 backdrop-blur-md border-b border-border",
+    "top-0 left-0 right-0 w-full bg-background/90 backdrop-blur-md border-b border-border",
     "lg:top-4 lg:left-1/2 lg:-translate-x-1/2 lg:w-[calc(100%-2rem)] lg:max-w-7xl lg:rounded-full lg:border lg:shadow-md",
     "lg:bg-muted/50 lg:backdrop-blur-xl lg:border-white/20"
      )}
