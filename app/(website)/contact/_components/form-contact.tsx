@@ -2,10 +2,29 @@
 
 import { useState } from "react"
 import type { ContactFormData } from "@/lib/validations/contact"
-import { ParticulierForm } from "./partiel/ParticulierForm"
-import { SocieteForm } from "./partiel/SocieteForm"
+import dynamic from "next/dynamic"
 import { toast } from "sonner"
 import { submitContactForm } from "@/app/actions/contact"
+  
+const ParticulierForm = dynamic(
+  () =>
+    import("./partiel/ParticulierForm").then((mod) => ({
+      default: mod.ParticulierForm,
+    })),
+  {
+    loading: () => <div>Chargement...</div>,
+  }
+)
+
+const SocieteForm = dynamic(
+  () =>
+    import("./partiel/SocieteForm").then((mod) => ({
+      default: mod.SocieteForm,
+    })),
+  {
+    loading: () => <div>Chargement...</div>,
+  }
+)
 
 type FormType = "particulier" | "societe"
 
