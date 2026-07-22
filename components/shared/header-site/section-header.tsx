@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils"
 export interface SectionHeaderProps {
   title: ReactNode
   highlight?: ReactNode
+  description?: ReactNode
   titleTag?: "h1" | "h2" | "h3" | "h4"
   headingLevel?: "h1" | "h2" | "h3" | "h4"
   headingId?: string
@@ -17,6 +18,7 @@ export function SectionHeader({
   titleTag,
   headingLevel = "h2",
   headingId,
+  description,
   align = "left",
   className,
 }: SectionHeaderProps) {
@@ -24,7 +26,7 @@ export function SectionHeader({
 
   return (
     <section className="w-full bg-gradient-to-br from-primary via-background to-primary/20 pt-22 lg:pt-40 pb-8">
-      <div className={cn("max-w-7xl mx-auto px-6 lg:px-8 flex flex-col", className)}>
+      <div className={cn("animate-slide-up max-w-7xl mx-auto px-6 lg:px-8 flex flex-col", className)}>
         <TitleComp
           id={headingId}
           className={cn(
@@ -40,12 +42,22 @@ export function SectionHeader({
         {/* Divider */}
         <div
           className={cn(
-            "mt-3 h-1 w-12 rounded-full bg-brand-green",
+            "animate-slide-up-delay-1 mt-3 h-1 w-12 rounded-full bg-brand-green",
             align === "center" && "mx-auto",
             align === "right" && "ml-auto"
           )}
           aria-hidden="true"
         />
+        {/* Description */}
+        {description && (
+          <p className={cn(
+            "animate-slide-up-delay-2 mt-4 text-base text-muted-foreground leading-relaxed max-w-2xl",
+            align === "center" && "text-center mx-auto",
+            align === "right" && "text-right ml-auto"
+          )}>
+            {description}
+          </p>
+        )}
       </div>
     </section>
   )

@@ -47,7 +47,7 @@ export function DesinfectionSection() {
           </div>
 
           {/* Image Right */}
-          <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl bg-background shiny-glass">
+          <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl bg-background">
             <Image
               src="/images/services/desinfectant.webp"
               alt="Produits de désinfection professionnelle Polaris"

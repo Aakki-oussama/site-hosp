@@ -2,29 +2,11 @@
 
 import { useState } from "react"
 import type { ContactFormData } from "@/lib/validations/contact"
-import dynamic from "next/dynamic"
+import { ParticulierForm } from "./partiel/ParticulierForm"
+import { SocieteForm } from "./partiel/SocieteForm"
 import { toast } from "sonner"
 import { submitContactForm } from "@/app/actions/contact"
-  
-const ParticulierForm = dynamic(
-  () =>
-    import("./partiel/ParticulierForm").then((mod) => ({
-      default: mod.ParticulierForm,
-    })),
-  {
-    loading: () => <div>Chargement...</div>,
-  }
-)
 
-const SocieteForm = dynamic(
-  () =>
-    import("./partiel/SocieteForm").then((mod) => ({
-      default: mod.SocieteForm,
-    })),
-  {
-    loading: () => <div>Chargement...</div>,
-  }
-)
 
 type FormType = "particulier" | "societe"
 
@@ -34,15 +16,15 @@ export function FormContact() {
 
   const handleSubmit = async (data: ContactFormData): Promise<boolean> => {
     // Honeypot — silent fake success for bots
-  if (data.honeypot && data.honeypot.length > 0) {
+    if (data.honeypot && data.honeypot.length > 0) {
 
-    toast.success("Votre message a été envoyé avec succès.")
-    return true
-  }
+      toast.success("Votre message a été envoyé avec succès.")
+      return true
+    }
     try {
       setIsLoading(true)
       const result = await submitContactForm(data)
-      
+
       if (result.success) {
         toast.success(result.message)
         return true
@@ -65,54 +47,53 @@ export function FormContact() {
       <div className="space-y-2">
         <h2 className="h-title"
         >
-           Envoyer un {" "}
-           <span className="text-gradient">
-             message
-           </span>{" "}
-           .
+          Envoyer un {" "}
+          <span className="text-gradient">
+            message
+          </span>{" "}
+          .
         </h2>
         <p className="section-description">
           Remplissez le formulaire, un expert vous répondra sous 24h.
         </p>
       </div>
+
       {/* Form Type Toggle */}
       <div className="flex gap-3 border-b">
         <button
           onClick={() => setFormType("particulier")}
-          className={`pb-3 px-1 text-base font-medium transition-colors ${
-            formType === "particulier"
+          className={`pb-3 px-1 text-base font-medium transition-colors ${formType === "particulier"
               ? "text-primary border-b-2 border-primary"
               : "text-muted-foreground hover:text-foreground"
-          }`}
+            }`}
         >
           Particulier
         </button>
         <button
           onClick={() => setFormType("societe")}
-          className={`pb-3 px-1 text-base font-medium transition-colors ${
-            formType === "societe"
+          className={`pb-3 px-1 text-base font-medium transition-colors ${formType === "societe"
               ? "text-primary border-b-2 border-primary"
               : "text-muted-foreground hover:text-foreground"
-          }`}
+            }`}
         >
           Société
         </button>
       </div>
 
       {/* Forms */}
-    {formType === "particulier" && (
-      <ParticulierForm
-    onSubmit={(data) => handleSubmit({ ...data, type: "particulier" })}
-    isLoading={isLoading}
-  />
-)}
+      {formType === "particulier" && (
+        <ParticulierForm
+          onSubmit={(data) => handleSubmit({ ...data, type: "particulier" })}
+          isLoading={isLoading}
+        />
+      )}
 
-{formType === "societe" && (
-  <SocieteForm
-    onSubmit={(data) => handleSubmit({ ...data, type: "societe" })}
-    isLoading={isLoading}
-  />
-)}
+      {formType === "societe" && (
+        <SocieteForm
+          onSubmit={(data) => handleSubmit({ ...data, type: "societe" })}
+          isLoading={isLoading}
+        />
+      )}
     </div>
   )
 }

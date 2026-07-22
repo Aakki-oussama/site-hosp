@@ -160,12 +160,6 @@
   }
 }
 
-@layer utilities {
-  .dot-grid {
-    background-image: radial-gradient(var(--color-primary) 1px, transparent 1px);
-    background-size: 24px 24px;
-  }
-}
 
 /* for section */
 @utility container-section {
@@ -193,7 +187,7 @@
   color: transparent;
 }
 
-
+/* for animation of text and some section*/
 /* ─── Timeline Animations ──────────────────────────────── */
 
 .timeline-item {
@@ -240,34 +234,75 @@
   }
 }
 
-/*-image animation*/
-.shiny-glass {
-  position: relative;
-  overflow: hidden;
-  border-radius: inherit;
+/* ─── Header Section Animations ──────────────────────────────────────────── */
+
+@keyframes slide-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.shiny-glass::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(255, 255, 255, 0.75) 35%,
-    rgba(255, 255, 255, 0.2) 50%,
-    rgba(255, 255, 255, 0.75) 65%,
-    transparent 100%
-  );
-  transform: scaleX(0.4) translateX(-100%);
-  transition: transform 0.8s ease;
-  pointer-events: none;
+.animate-slide-up {
+  animation: slide-in-up 0.6s ease forwards;
 }
 
-.shiny-glass:hover::after {
-  transform: scaleX(1.2) translateX(100%);
+.animate-slide-up-delay-1 {
+  animation: slide-in-up 0.6s ease 0.15s forwards;
+  opacity: 0;
 }
+
+.animate-slide-up-delay-2 {
+  animation: slide-in-up 0.6s ease 0.3s forwards;
+  opacity: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-slide-up,
+  .animate-slide-up-delay-1,
+  .animate-slide-up-delay-2 {
+    animation: none;
+    opacity: 1;
+  }
+}
+
+.reveal-section {
+  opacity: 0;
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
+}
+
+.reveal-up {
+  transform: translateY(30px);
+}
+
+.reveal-left {
+  transform: translateX(-30px);
+}
+
+.reveal-right {
+  transform: translateX(30px);
+}
+
+.reveal-visible {
+  opacity: 1;
+  transform: translate(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-section {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
 
 /* for text & color of the test*/
 
@@ -279,7 +314,7 @@
 
 @layer utilities {
 
-.home-title {
+ .home-title {
   @apply font-heading text-3xl font-bold tracking-tight leading-tight lg:text-4xl;
 }
 
@@ -301,9 +336,4 @@
 .card-description {
   @apply text-sm leading-6 text-muted-foreground;
 }
-
-  .section-badge {
-    @apply text-xs font-semibold uppercase tracking-widest text-primary;
-  }
 }
-
