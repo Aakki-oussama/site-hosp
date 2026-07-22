@@ -46,6 +46,7 @@ export default function ServicesPage() {
         align="center"
         title="Des solutions d'hygiène"
         highlight="certifiées et fiables"
+        description="Polaris Industrie HOSP propose des services de nettoyage, désinfection, conseil et livraison de solutions professionnelles adaptées aux besoins des établissements au Maroc."
       />
 
       <main>

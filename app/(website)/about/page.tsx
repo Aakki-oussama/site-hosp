@@ -5,6 +5,7 @@ import { MissionSection } from "@/app/(website)/about/_components/mission-sectio
 import { ValuesSection } from "@/app/(website)/about/_components/values-section"
 import { TimelineSection } from "@/app/(website)/about/_components/timeline-section"
 import { CTASection } from "@/components/shared/cta-button"
+import { RevealOnScroll } from "@/components/shared/animation/revealonscroll"
 
 export const metadata: Metadata = {
   title: "À propos",
@@ -43,14 +44,19 @@ export default function AboutPage() {
         align="center"
         title="Notre engagement pour"
         highlight="l'hygiène professionnelle"
+        description="Depuis plus de 10 ans, Polaris Industrie Hosp conçoit et distribue des solutions d'hygiène certifiées pour les professionnels au Maroc."
       />
 
       <main>
+        <RevealOnScroll direction="left">
         <ValuesSection />
+        </RevealOnScroll>
         <StatsSection />
         <MissionSection />
         <TimelineSection />
+        <RevealOnScroll direction="up">
         <CTASection />
+        </RevealOnScroll>
       </main>
     </>
   )

@@ -25,7 +25,7 @@ export function SectionHeader({
   const TitleComp = titleTag || headingLevel
 
   return (
-    <section className="w-full bg-gradient-to-br from-primary via-background to-primary/20 pt-22 lg:pt-40 pb-8">
+    <section className="w-full bg-gradient-to-br from-primary via-background to-primary/20 pt-26 lg:pt-40 pb-8">
       <div className={cn("animate-slide-up max-w-7xl mx-auto px-6 lg:px-8 flex flex-col", className)}>
         <TitleComp
           id={headingId}
