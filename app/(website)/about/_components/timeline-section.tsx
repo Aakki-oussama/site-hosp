@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils"
 import { timeline } from "@/data/about/timeline"
 import { Badge } from "@/components/ui/badge"
 import { ShieldCheck } from "@/components/shared/icons"
+import { RevealOnScroll } from "@/components/shared/animation/revealonscroll"
 
 export function TimelineSection() {
   const sectionRef = useRef<HTMLElement>(null)
@@ -37,25 +38,27 @@ export function TimelineSection() {
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Header */}
-        <header className="mx-auto mb-16 max-w-2xl text-center">
-          <Badge variant="subtle" className="mb-3 gap-2">
-            <ShieldCheck aria-hidden="true" />
-            Depuis 2022
-          </Badge>
-          <h2
-            id="timeline-heading"
-            className="h-title"
-          >
-            Notre{" "}
-            <span className="text-gradient">
-              Parcours
-            </span>
-          </h2>
-          <p className="section-description mt-4">
-            De notre fondation à aujourd&apos;hui, une croissance portée par
-            l&apos;expertise et la confiance de nos partenaires.
-          </p>
-        </header>
+        <RevealOnScroll direction="up">
+          <header className="mx-auto mb-16 max-w-2xl text-center">
+            <Badge variant="subtle" className="mb-3 gap-2">
+              <ShieldCheck aria-hidden="true" />
+              Depuis 2022
+            </Badge>
+            <h2
+              id="timeline-heading"
+              className="h-title"
+            >
+              Notre{" "}
+              <span className="text-gradient">
+                Parcours
+              </span>
+            </h2>
+            <p className="section-description mt-4">
+              De notre fondation à aujourd&apos;hui, une croissance portée par
+              l&apos;expertise et la confiance de nos partenaires.
+            </p>
+          </header>
+        </RevealOnScroll>
 
         {/* Timeline */}
         <div className="relative mx-auto max-w-5xl">

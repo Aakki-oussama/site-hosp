@@ -127,10 +127,13 @@ export function ParticulierForm({ onSubmit, isLoading = false }: ParticulierForm
           </FieldLabel>
           <FieldContent>
             <Select
+              name="ville"
               value={villeValue ?? ""}
               onValueChange={(value) => setValue("ville", value, { shouldValidate: true, shouldDirty: true })}
             >
-              <SelectTrigger id="ville">
+              <SelectTrigger
+                id="ville"
+              >
                 <SelectValue placeholder="Choisir une ville" />
               </SelectTrigger>
               <SelectContent>

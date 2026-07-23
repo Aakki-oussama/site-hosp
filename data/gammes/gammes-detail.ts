@@ -1,8 +1,7 @@
-import { Home, Droplets, Leaf, Stethoscope, type LucideIcon } from "lucide-react"
+import { Home, Droplets, Stethoscope, type LucideIcon, Factory } from "lucide-react"
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
-// TODO: Actuellement inutilisé. Sera utilisé dans le futur pour associer des icônes aux lieux d'utilisation (usagePlaces).
 export type UsagePlace = {
   label: string
   icon: LucideIcon
@@ -48,17 +47,15 @@ export const gammesDetails: GammeDetail[] = [
     description: "Traitement et purification de l'eau pour usage industriel et collectif.",
     icon: Droplets,
     usagePlaces: ["Industrie", "Piscine", "Collectivité"],
-    // TODO: replace with /images/gammes/aqua.webp
     image: "/images/products/Sans-zo.webp",
   },
   {
-    slug: "bio",
+    slug: "agroalimentaire",
     title: "Gamme",
-    highlightedTitle: "Bio",
-    description: "Formules écologiques et biodégradables pour une hygiène responsable.",
-    icon: Leaf,
-    usagePlaces: ["Restaurant", "Hôtel", "Résidence"],
-    // TODO: replace with /images/gammes/bio.webp
-    image: "/images/products/Megasept-sdc.webp",
+    highlightedTitle: "Agroalimentaire",
+    description: "Détergent et désinfectant professionnel pour le nettoyage des surfaces et équipements de l'industrie agro-alimentaire.",
+    icon: Factory,
+    usagePlaces: ["Industrie Agro-alimentaire"],
+    image: "/images/gamme/Agro-Alimentaire.webp",
   },
 ]

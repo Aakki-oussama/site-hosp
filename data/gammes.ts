@@ -36,9 +36,9 @@ export const gammes: Gamme[] = [
     color: "blue",
   },
   {
-    id: "bio",
-    slug: "bio",
-    name: "Gamme bio",
+    id: "Agroalimentaire",
+    slug: "agroalimentaire",
+    name: "Gamme Agroalimentaire",
     description:
       "Formules écologiques et biodégradables pour une hygiène responsable",
     icon: "Leaf",

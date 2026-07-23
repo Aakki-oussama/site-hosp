@@ -13,6 +13,11 @@ import {
   Hospital,
   HandCoins,
   HandHelping,
+  SprayCan,
+  Utensils,
+  Sparkles,
+  Shield,
+  ShieldCheck,
 } from "lucide-react"
 
 // ─── Types ────────────────────────────────────────────────────────────────────
@@ -115,7 +120,7 @@ export const products: Product[] = [
 
     ],
     domaine: [
-      { icon: Hospital , label: "Hôpitaux et Cliniques" },
+      { icon: Hospital, label: "Hôpitaux et Cliniques" },
       { icon: FlaskConical, label: "Laboratoires" },
       { icon: Stethoscope, label: "Cabinets Médicaux" },
       { icon: Users, label: "Collectivités" },
@@ -141,7 +146,7 @@ export const products: Product[] = [
       { icon: ShieldPlus, label: "USAGE MEDICAL", description: "Formule adaptée au milieu médical." },
     ],
     domaine: [
-      { icon: Hospital , label: "Hôpitaux et Cliniques" },
+      { icon: Hospital, label: "Hôpitaux et Cliniques" },
       { icon: FlaskConical, label: "Laboratoires" },
       { icon: Stethoscope, label: "Cabinets Médicaux" },
       { icon: Users, label: "Collectivités" },
@@ -169,11 +174,86 @@ export const products: Product[] = [
       { icon: ShieldPlus, label: "USAGE MEDICAL", description: "Formule adaptée au milieu médical." },
     ],
     domaine: [
-      { icon: Hospital , label: "Hôpitaux et Cliniques" },
+      { icon: Hospital, label: "Hôpitaux et Cliniques" },
       { icon: FlaskConical, label: "Laboratoires" },
       { icon: Stethoscope, label: "Cabinets Médicaux" },
       { icon: Users, label: "Collectivités" },
       { icon: Factory, label: "Industrie Agroalimentaire" },
+    ],
+  },
+
+  {
+    id: "med-4",
+    slug: "Polasteril",
+    name: "Polasteril",
+    shortDescription: "Désinfectant thermochimique à triple action pour générateurs de dialyse.",
+    fullDescription: "Désinfectant thermochimique des générateurs de dialyse POLASTERIL est un produit de triples actions des générateurs de dialyse. Il peut jouer le rôle d'un détaratant pour éliminer le carbonate de calcium et de magnésium.",
+    image: "/images/products/Polasteril.webp",
+    gammeSlug: "medical",
+    tags: ["Désinfectant", "Detartant", "Nettoyant", "Usage professionnel"],
+    formats: ["750ml", "5L"],
+    surface: ["Surface", "Générateurs de dialyse"],
+    benefits: [
+      { icon: ShieldPlus, label: "USAGE DIALYSEE", description: "Conçu pour la désinfection des générateurs de dialyse" },
+      { icon: ShieldPlus, label: "ACTION DÉTARTRANTE", description: "Élimine les dépôts de carbonate de calcium et de magnésium." },
+      { icon: ShieldPlus, label: "TRIPLE ACTION", description: "Désinfecte et élimine les dépôts minéraux." },
+    ],
+    domaine: [
+      { icon: Hospital, label: "Hôpitaux et Cliniques" },
+      { icon: FlaskConical, label: "Laboratoires" },
+      { icon: Stethoscope, label: "Cabinets Médicaux" },
+      { icon: Users, label: "Collectivités" },
+    ],
+  },
+
+  {
+    id: "med-5",
+    slug: "Poloxyd-2.5",
+    name: "Poloxyd-2.5",
+    shortDescription: "Désinfectant à froid pour générateurs d'hémodialyse et dispositifs de traitement d'eau.",
+    fullDescription: "Désinfectant à froid prêt à l'emploi pour désinfection et détartrage des générateurs d'hémodialyse et dispositif de traitement d'eau.",
+    image: "/images/products/Poloxyd-2.5.webp",
+    gammeSlug: "medical",
+    tags: ["Désinfectant", "Détartrant", "Usage professionnel"],
+    formats: ["10L", "5L"],
+    surface: ["Générateurs d'hémodialyse", "Dispositifs de traitement d'eau"],
+    benefits: [
+      { icon: ShieldPlus, label: "PRÊT À L'EMPLOI", description: "Solution prête à l'emploi pour une utilisation pratique." },
+      { icon: ShieldPlus, label: "ACTION DÉTARTRANTE", description: "Permet le détartrage des générateurs d'hémodialyse." },
+      { icon: ShieldPlus, label: "DÉSINFECTION", description: "Destiné à la désinfection des générateurs d'hémodialyse." },
+    ],
+    domaine: [
+      { icon: Hospital, label: "Hôpitaux et Cliniques" },
+      { icon: FlaskConical, label: "Laboratoires" },
+      { icon: Stethoscope, label: "Cabinets Médicaux" },
+    ],
+  },
+
+  {
+    id: "med-6",
+    slug: "Paragen-2",
+    name: "Paragen-2%",
+    shortDescription: "Nettoyant et désinfectant pour surfaces et équipements en milieu médical et agro-alimentaire.",
+    fullDescription: "Produit nettoyant et désinfectant des surfaces, des équipements des générateyr d'hémodialyse. Il s'utilise aussi dans les hôpitaux, les cliniques et dans l'industrie agro-alimentaire pour la désinfection de surfaces et des équipements.",
+    image: "/images/products/Paragen-2.webp",
+    gammeSlug: "medical",
+    tags: ["Nettoyant", "Désinfectant", "Usage professionnel"],
+    formats: ["750ml", "5L"],
+    surface: [
+      "Surfaces",
+      "Équipements",
+      "Générateurs d'hémodialyse"
+    ],
+    benefits: [
+      { icon: ShieldPlus, label: "NETTOYANT & DÉSINFECTANT", description: "Nettoie et désinfecte les surfaces et les équipements." },
+      { icon: Hospital, label: "USAGE MÉDICAL", description: "Adapté aux hôpitaux, cliniques et générateurs d'hémodialyse." },
+      { icon: Factory, label: "AGRO-ALIMENTAIRE", description: "Utilisable pour la désinfection des surfaces et équipements." },
+    ],
+
+    domaine: [
+      { icon: Hospital, label: "Hôpitaux et Cliniques" },
+      { icon: FlaskConical, label: "Laboratoires" },
+      { icon: Factory, label: "Industrie Agro-alimentaire" },
     ],
   },
 
@@ -202,74 +282,71 @@ export const products: Product[] = [
       { icon: Users, label: "Collectivités" },
     ],
   },
-  {
-    id: "aqua-2",
-    slug: "alguicide-liquide-concentre",
-    name: "Alguicide Concentré",
-    shortDescription: "Prévient et élimine la formation des algues dans les bassins et réseaux d'eau.",
-    image: "/images/services/livraison.webp",
-    gammeSlug: "aqua",
-    tags: ["Anti-algues", "Traitement eau", "Concentré"],
-    formats: ["1L", "5L", "20L"],
-    surface: ["Canalisations", "Parois de bassins", "Systèmes de filtration"],
-  },
-  {
-    id: "aqua-3",
-    slug: "regulateur-ph-moins",
-    name: "Régulateur pH Moins",
-    shortDescription: "Permet de baisser et de stabiliser le pH de l'eau pour un confort de baignade optimal.",
-    image: "/images/services/livraison.webp",
-    gammeSlug: "aqua",
-    tags: ["Équilibre eau", "Régulation pH", "Sécurité eau"],
-    formats: ["1L", "5L", "25kg"],
-    surface: ["Eau de piscine (ajustement de pH)"],
-  },
 
-  // ─── Gamme Bio ──────────────────────────────────────────────────────────────
+  // ─── Gamme Agroalimentaire ──────────────────────────────────────────────────────
   {
-    id: "bio-1",
-    slug: "degraissant-ecologique",
-    name: "Dégraissant Écologique",
-    shortDescription: "Dégraissant puissant à base d'ingrédients biosourcés pour cuisines et industries.",
-    fullDescription:
-      "Le Dégraissant Écologique Polaris est formulé à partir d'ingrédients biosourcés pour offrir une performance de dégraissage optimale tout en respectant l'environnement. Sa formule biodégradable est sans danger pour les surfaces traitées et les utilisateurs. Certifié éco-responsable, il convient aux cuisines professionnelles, aux industries agroalimentaires et aux collectivités soucieuses de leur impact environnemental.",
-    image: "/images/products/degraissant-eco.webp",
-    gammeSlug: "bio",
-    tags: ["Biosourcé", "Biodégradable", "Certifié éco"],
-    formats: ["750ml", "5L"],
-    surface: ["Fours", "Plaques", "Hottes", "Inox"],
+    id: "Agro-1",
+    slug: "Polifoam-CL",
+    name: "Polifoam-CL",
+    shortDescription: "Détergent et désinfectant alcalin chloré pour l'industrie agro-alimentaire.",
+    fullDescription: "Détergent et désinfectant alcalin chloré spécialement formulé pour le nettoyage et la désinfection avec des équipements à projection de mousse sure les surfaces ouvertes et les équipements de l'industrie agro-alimentaire en générale et particulièrement de l'industrie des viandes et des produits cariés.\
+     \nEt pour éviter la formation de film sous lequel peuvent se nicher les bactéries, on utilise le POLIFAOM-AC par alternance avec POLIFAM-CL.",
+    image: "/images/products/polifoam-cl.webp",
+    gammeSlug: "agroalimentaire",
+    tags: ["Détergent", "Désinfectant", "Alcalin chloré", "Agro-alimentaire",],
+    formats: ["25kg"],
+    surface: ["Surfaces ouvertes", "Équipements",],
     benefits: [
-      { icon: Droplets, label: "Dégraisse en profondeur", description: "Actifs biosourcés puissants qui décollent les graisses cuites sans récurer." },
-      { icon: FlaskConical, label: "100% biodégradable", description: "Formule à dégradation rapide respectueuse des écosystèmes aquatiques." },
-      { icon: Building2, label: "Respecte les surfaces", description: "Compatible inox, émail, vitrocéramique et revêtements alimentaires." },
+      { icon: Sparkles, label: "NETTOYAGE PUISSANT", description: "Favorise un nettoyage approfondi.", },
+      { icon: ShieldCheck, label: "HYGIÈNE RENFORCÉE", description: "Contribue à une désinfection efficace.", },
+      { icon: SprayCan, label: "APPLICATION PAR MOUSSE", description: "Permet une application uniforme.", },
     ],
     domaine: [
-      { icon: UtensilsCrossed, label: "Restauration" },
-      { icon: Factory, label: "Industrie agroalimentaire" },
-      { icon: Users, label: "Collectivités" },
-      { icon: Hotel, label: "Hôtellerie" },
+      { icon: Factory, label: "Industrie Agro-alimentaire", },
     ],
   },
+
   {
-    id: "bio-2",
-    slug: "savon-mains-vegetal",
-    name: "Savon Mains Végétal",
-    shortDescription: "Savon doux pour le lavage fréquent des mains à base de glycérine végétale bio.",
-    image: "/images/services/livraison.webp",
-    gammeSlug: "bio",
-    tags: ["Végétal", "Doux pour la peau", "Écologique"],
-    formats: ["500ml", "5L"],
-    surface: ["Mains (usage fréquent professionnel)"],
+    id: "Agro-2",
+    slug: "Polinet",
+    name: "Polinet",
+    shortDescription: "Détergent totalement soluble dans l'eau, avec une excellente rinçabilité.",
+    fullDescription: "Totalement soluble dans l'eau et insensible à sa dureté. Il offre une excellente rinçabilité ainsi qu'un bon pouvoir peptisant et mouillant.\
+    \nIl ne réagit pas avec le CO₂, ce qui permet d'éviter les risques de chute de pression liés à la neutralisation.",
+    image: "/images/products/polinet.webp",
+    gammeSlug: "agroalimentaire",
+    tags: ["Détergent", "Soluble dans l'eau", "Rinçage facile", "Pouvoir mouillant",],
+    formats: ["25kg"],
+    surface: ["Surfaces ouvertes", "Équipements"],
+    benefits: [
+      { icon: Droplet, label: "RINÇAGE SIMPLIFIÉ", description: "Facilite les opérations de rinçage.", },
+      { icon: ShieldCheck, label: "PERFORMANCE CONSTANTE", description: "Reste efficace malgré la dureté de l'eau.", },
+      { icon: Sparkles, label: "BONNE COUVERTURE", description: "Favorise un contact efficace avec les surfaces.", },
+    ],
+    domaine: [
+      { icon: Factory, label: "Industrie Agro-alimentaire", },
+    ],
   },
+
   {
-    id: "bio-3",
-    slug: "nettoyant-vitres-bio",
-    name: "Nettoyant Vitres Éco",
-    shortDescription: "Formule biodégradable qui nettoie efficacement les vitres et surfaces modernes.",
-    image: "/images/services/livraison.webp",
-    gammeSlug: "bio",
-    tags: ["Anti-traces", "Formule éco", "Séchage rapide"],
-    formats: ["750ml", "5L"],
-    surface: ["Vitres", "Miroirs", "Surfaces vitrées", "Écrans"],
-  },
+    id: "Agro-3",
+    slug: "Polixol",
+    name: "Polixol",
+    shortDescription: "Détergent et désinfectant chloré puissant, adapté aux eaux de très forte dureté.",
+    fullDescription: "Spécialement indiqué pour les eaux de très forte dureté. Il évite la formation de pierre de lait et de Bierstein. Totalement exempt de formation de mousse, il possède un important pouvoir détergent et un chlore très stable.\
+     \nIl offre un fort pouvoir désinfectant et une action bactéricide à large spectre. Non corrosif vis-à-vis de l'inox, du caoutchouc et des matières plastiques. Ne convient pas à l'aluminium. Le produit, concentré ou en solution d'emploi, ne doit pas être neutralisé ni mis en milieu acide.",
+    image: "/images/products/polixol.webp",
+    gammeSlug: "agroalimentaire",
+    tags: ["Détergent", "Désinfectant", "Chloré", "Bactéricide", "Eaux très dures",],
+    formats: ["25kg"],
+    surface: ["Acier inoxydable", "Caoutchouc", "Matières plastiques",],
+    benefits: [
+      { icon: Sparkles, label: "RESPECT DES MATÉRIAUX", description: "Compatible avec les surfaces adaptées.", },
+      { icon: ShieldCheck, label: "HYGIÈNE RENFORCÉE", description: "Assure une désinfection efficace..", },
+      { icon: Shield, label: "NETTOYAGE PUISSANT", description: "Élimine efficacement les salissures.", },
+    ],
+    domaine: [
+      { icon: Factory, label: "Industrie Agro-alimentaire", },
+    ],
+  }
 ]

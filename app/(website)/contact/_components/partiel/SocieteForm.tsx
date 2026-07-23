@@ -151,6 +151,7 @@ export function SocieteForm({ onSubmit, isLoading = false }: SocieteFormProps) {
           </FieldLabel>
           <FieldContent>
             <Select
+              name="ville"
               value={villeValue ?? ""}
               onValueChange={(value) => setValue("ville", value, { shouldValidate: true, shouldDirty: true })}
             >
@@ -175,6 +176,7 @@ export function SocieteForm({ onSubmit, isLoading = false }: SocieteFormProps) {
           </FieldLabel>
           <FieldContent>
             <Select
+              name="secteur"
               value={secteurValue ?? ""}
               onValueChange={(value) => setValue("secteur", value, { shouldValidate: true, shouldDirty: true })}
             >
