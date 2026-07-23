@@ -69,7 +69,7 @@ export function RelatedProducts({ currentSlug, gammeSlug }: RelatedProductsProps
                         variant="outline"
                         className="rounded-full bg-background/90 text-[11px] font-semibold backdrop-blur-sm"
                       >
-                        {product.formats[0]}
+                        {product.formats.slice(0, 2).join(" / ")}
                       </Badge>
                     </div>
                   </div>

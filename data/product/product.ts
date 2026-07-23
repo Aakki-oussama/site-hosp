@@ -14,10 +14,13 @@ import {
   HandCoins,
   HandHelping,
   SprayCan,
-  Utensils,
   Sparkles,
   Shield,
   ShieldCheck,
+  Layers,
+  Zap,
+  Hand,
+  HeartPulse,
 } from "lucide-react"
 
 // ─── Types ────────────────────────────────────────────────────────────────────
@@ -78,28 +81,6 @@ export const products: Product[] = [
       { icon: UtensilsCrossed, label: "Restauration" },
     ],
   },
-  {
-    id: "home-2",
-    slug: "liquide-vaisselle-concentre",
-    name: "Liquide Vaisselle Concentré",
-    shortDescription: "Formule ultra-dégraissante douce pour les mains avec une agréable odeur de citron.",
-    image: "/images/services/livraison.webp",
-    gammeSlug: "home",
-    tags: ["Dégraissant", "Formule douce", "Vaisselle"],
-    formats: ["500ml", "1L", "5L"],
-    surface: ["Vaisselle", "Couverts", "Ustensiles de cuisine"],
-  },
-  {
-    id: "home-3",
-    slug: "nettoyant-sols-brillance",
-    name: "Nettoyant Sols Brillance",
-    shortDescription: "Idéal pour le carrelage, le marbre et les parquets. Laisse un parfum frais longue durée.",
-    image: "/images/services/livraison.webp",
-    gammeSlug: "home",
-    tags: ["Brillance", "Parfumé", "Tous sols"],
-    formats: ["1L", "5L"],
-    surface: ["Carrelages", "Marbres", "Parquets", "Sols plastiques"],
-  },
 
   // ─── Gamme Médical ──────────────────────────────────────────────────────────
   {
@@ -108,7 +89,7 @@ export const products: Product[] = [
     name: "Megasept SDC",
     shortDescription: "Savon liquide à base de surfactifs amphotères pour lavage simple des mains.",
     fullDescription: "Megasept SDC est un savon liquide professionnel destiné au lavage simple des mains eu milieu hospitalier, médical, paramédical, laboratoire, collectivité et industrie.\nSa formule à base de Cocamidopropyl Betaine, surfactif amphotére doux, associée au Sodium Lauret Sulfate, assure un nettoyage efficace, une mousse agréable et un rinçage facile, tout en respectant la peau lors des utilisation fréquentes.",
-    image: "/images/products/Megasept-sdc.webp",
+    image: "/images/products/Megasept-sdc-500mL.webp",
     gammeSlug: "medical",
     tags: ["Non-parfumé", "Usage fréquent", "Main sensible", "Usage professionnel"],
     formats: ["500ml", "5L"],
@@ -133,7 +114,7 @@ export const products: Product[] = [
     name: "Megasept-Sa",
     shortDescription: "Savon antiseptique à large spectre à base de dérivé biguanide en solution à action bactéricide, virucide et fongicide.",
     fullDescription: "MEGASEPT SA et un savon antiseptique hydrosoluble pour le traitement hygiénique et chirurgical des main et avant-bras par lavage en milieu hospitalier, médical, paramédical, laboratoire et agroalimentaire. \nSa formule à base de dérivé biguanide maintient l'hydratation de la peau et évite l'élimanation des acides gras constitutifs.Solution moussante à large spectre.",
-    image: "/images/products/Megasept-sa.webp",
+    image: "/images/products/Megasept-sa-500mL.webp",
     gammeSlug: "medical",
     tags: ["Usage fréquent", "Usage professionnel", "Non parfumé", "Sans colorant"],
     formats: ["750ml", "5L"],
@@ -156,11 +137,35 @@ export const products: Product[] = [
 
   {
     id: "med-3",
+    slug: "Solution-Hydroalcoolique",
+    name: "Solution Hydro-Alcoolique",
+    shortDescription: "Solution hydro-alcoolique pour l'hygiène des mains, sans rinçage et prête à l'emploi.",
+    fullDescription: "Solution hydro-alcoolique nettoyante et désinfectante, prête à l'emploi pour l'hygiène des mains sans rinçage. Recommandée par l'OMS pour l'antisepsie des mains.\
+    \nLa friction permet d'améliorer l'observance de l'hygiène des mains, avec un gain de temps et une meilleure tolérance qu'un lavage des mains.",
+    image: "/images/products/Solution-hydroalcoolique.webp",
+    gammeSlug: "medical",
+    tags: ["Hygiène des mains", "Désinfectant", "Sans rinçage"],
+    formats: ["50mL", "125mL", "500ml", "1L", "5L"],
+    surface: ["Mains"],
+    benefits: [
+      { icon: Hand, label: "HYGIÈNE DES MAINS", description: "Pour une hygiène efficace des mains.", },
+      { icon: Zap, label: "GAIN DE TEMPS", description: "Une friction rapide et pratique.", },
+      { icon: Droplet, label: "SANS RINÇAGE", description: "Prêt à l'emploi, sans lavage à l'eau.", },
+    ],
+    domaine: [
+      { icon: Hospital, label: "Hôpitaux et Cliniques", },
+      { icon: Stethoscope, label: "Cabinets Médicaux", },
+      { icon: HeartPulse, label: "Centres de Santé", },
+    ],
+  },
+
+  {
+    id: "med-4",
     slug: "Sans-Zo",
     name: "Sans-Zo",
     shortDescription: "Gel Sans-zo destiné à la désinfection de mains par frctions.",
     fullDescription: "Gel HYDROALCOOLIQUE à base d'alcool éthylique au alcool propylique ou alccol isopropylique à une concentration entre 60% et 80% ou entre 550 et 700 mg/g. \nSans odeur ni parfum, contenant un agent hydratant.A action BACTERICIDE et LEVURICIDE.",
-    image: "/images/products/Sans-Zo.webp",
+    image: "/images/products/SansZo.webp",
     gammeSlug: "medical",
     tags: ["Usage fréquent", "Usage professionnel"],
     formats: ["750ml", "5L"],
@@ -183,31 +188,27 @@ export const products: Product[] = [
   },
 
   {
-    id: "med-4",
+    id: "med-5",
     slug: "Polasteril",
     name: "Polasteril",
     shortDescription: "Désinfectant thermochimique à triple action pour générateurs de dialyse.",
     fullDescription: "Désinfectant thermochimique des générateurs de dialyse POLASTERIL est un produit de triples actions des générateurs de dialyse. Il peut jouer le rôle d'un détaratant pour éliminer le carbonate de calcium et de magnésium.",
-    image: "/images/products/Polasteril.webp",
+    image: "/images/products/Polasteril-750mL.webp",
     gammeSlug: "medical",
     tags: ["Désinfectant", "Detartant", "Nettoyant", "Usage professionnel"],
     formats: ["750ml", "5L"],
     surface: ["Surface", "Générateurs de dialyse"],
     benefits: [
-      { icon: ShieldPlus, label: "USAGE DIALYSEE", description: "Conçu pour la désinfection des générateurs de dialyse" },
-      { icon: ShieldPlus, label: "ACTION DÉTARTRANTE", description: "Élimine les dépôts de carbonate de calcium et de magnésium." },
-      { icon: ShieldPlus, label: "TRIPLE ACTION", description: "Désinfecte et élimine les dépôts minéraux." },
+      { icon: Droplet, label: "ENTRETIEN DES GÉNÉRATEURS", description: "Contribue au bon entretien des générateurs" },
+      { icon: ShieldPlus, label: "ACTION COMPLÈTE", description: "Désinfecte et détartre les équipements." },
     ],
     domaine: [
       { icon: Hospital, label: "Hôpitaux et Cliniques" },
-      { icon: FlaskConical, label: "Laboratoires" },
-      { icon: Stethoscope, label: "Cabinets Médicaux" },
-      { icon: Users, label: "Collectivités" },
     ],
   },
 
   {
-    id: "med-5",
+    id: "med-6",
     slug: "Poloxyd-2.5",
     name: "Poloxyd-2.5",
     shortDescription: "Désinfectant à froid pour générateurs d'hémodialyse et dispositifs de traitement d'eau.",
@@ -218,9 +219,9 @@ export const products: Product[] = [
     formats: ["10L", "5L"],
     surface: ["Générateurs d'hémodialyse", "Dispositifs de traitement d'eau"],
     benefits: [
-      { icon: ShieldPlus, label: "PRÊT À L'EMPLOI", description: "Solution prête à l'emploi pour une utilisation pratique." },
-      { icon: ShieldPlus, label: "ACTION DÉTARTRANTE", description: "Permet le détartrage des générateurs d'hémodialyse." },
-      { icon: ShieldPlus, label: "DÉSINFECTION", description: "Destiné à la désinfection des générateurs d'hémodialyse." },
+      { icon: Zap, label: "PRÊT À L'EMPLOI", description: "Prêt à l'emploi pour une utilisation simplifiée." },
+      { icon: Sparkles, label: "ENTRETIEN COMPLET", description: "Combine désinfection et détartrage." },
+      { icon: ShieldPlus, label: "HYGIÈNE DES ÉQUIPEMENTS", description: "Assure la désinfection des générateurs." },
     ],
     domaine: [
       { icon: Hospital, label: "Hôpitaux et Cliniques" },
@@ -230,7 +231,7 @@ export const products: Product[] = [
   },
 
   {
-    id: "med-6",
+    id: "med-7",
     slug: "Paragen-2",
     name: "Paragen-2%",
     shortDescription: "Nettoyant et désinfectant pour surfaces et équipements en milieu médical et agro-alimentaire.",
@@ -239,20 +240,15 @@ export const products: Product[] = [
     gammeSlug: "medical",
     tags: ["Nettoyant", "Désinfectant", "Usage professionnel"],
     formats: ["750ml", "5L"],
-    surface: [
-      "Surfaces",
-      "Équipements",
-      "Générateurs d'hémodialyse"
-    ],
+    surface: ["Surfaces", "Équipements", "Générateurs d'hémodialyse"],
     benefits: [
-      { icon: ShieldPlus, label: "NETTOYANT & DÉSINFECTANT", description: "Nettoie et désinfecte les surfaces et les équipements." },
-      { icon: Hospital, label: "USAGE MÉDICAL", description: "Adapté aux hôpitaux, cliniques et générateurs d'hémodialyse." },
-      { icon: Factory, label: "AGRO-ALIMENTAIRE", description: "Utilisable pour la désinfection des surfaces et équipements." },
+      { icon: Sparkles, label: "NETTOYAGE EFFICACE", description: "Nettoie les surfaces et les équipements" },
+      { icon: ShieldPlus, label: "HYGIÈNE RENFORCÉE", description: "Désinfecte les surfaces et équipements." },
+      { icon: Layers, label: "USAGE POLYVALENT", description: "Adapté aux secteurs médical et alimentaire." },
     ],
 
     domaine: [
       { icon: Hospital, label: "Hôpitaux et Cliniques" },
-      { icon: FlaskConical, label: "Laboratoires" },
       { icon: Factory, label: "Industrie Agro-alimentaire" },
     ],
   },
@@ -266,7 +262,7 @@ export const products: Product[] = [
     shortDescription: "Désinfection rapide de l'eau de piscine et traitement choc contre les algues.",
     fullDescription:
       "Le Chlore Choc en Pastilles Polaris est un traitement intensif pour la désinfection rapide de l'eau de piscine. Sa formule concentrée élimine efficacement les bactéries, virus et algues en quelques heures. Idéal pour les remises en service, les fortes chaleurs ou les situations de contamination.",
-    image: "/images/products/chlore-choc.webp",
+    image: "/images/products/Chlore-Choc.webp",
     gammeSlug: "aqua",
     tags: ["Action rapide", "Anti-algues", "Usage piscine"],
     formats: ["1kg", "5kg", "25kg"],
@@ -291,7 +287,7 @@ export const products: Product[] = [
     shortDescription: "Détergent et désinfectant alcalin chloré pour l'industrie agro-alimentaire.",
     fullDescription: "Détergent et désinfectant alcalin chloré spécialement formulé pour le nettoyage et la désinfection avec des équipements à projection de mousse sure les surfaces ouvertes et les équipements de l'industrie agro-alimentaire en générale et particulièrement de l'industrie des viandes et des produits cariés.\
      \nEt pour éviter la formation de film sous lequel peuvent se nicher les bactéries, on utilise le POLIFAOM-AC par alternance avec POLIFAM-CL.",
-    image: "/images/products/polifoam-cl.webp",
+    image: "/images/products/Polifoam-cl.webp",
     gammeSlug: "agroalimentaire",
     tags: ["Détergent", "Désinfectant", "Alcalin chloré", "Agro-alimentaire",],
     formats: ["25kg"],
@@ -313,7 +309,7 @@ export const products: Product[] = [
     shortDescription: "Détergent totalement soluble dans l'eau, avec une excellente rinçabilité.",
     fullDescription: "Totalement soluble dans l'eau et insensible à sa dureté. Il offre une excellente rinçabilité ainsi qu'un bon pouvoir peptisant et mouillant.\
     \nIl ne réagit pas avec le CO₂, ce qui permet d'éviter les risques de chute de pression liés à la neutralisation.",
-    image: "/images/products/polinet.webp",
+    image: "/images/products/Polinet.webp",
     gammeSlug: "agroalimentaire",
     tags: ["Détergent", "Soluble dans l'eau", "Rinçage facile", "Pouvoir mouillant",],
     formats: ["25kg"],
@@ -335,7 +331,7 @@ export const products: Product[] = [
     shortDescription: "Détergent et désinfectant chloré puissant, adapté aux eaux de très forte dureté.",
     fullDescription: "Spécialement indiqué pour les eaux de très forte dureté. Il évite la formation de pierre de lait et de Bierstein. Totalement exempt de formation de mousse, il possède un important pouvoir détergent et un chlore très stable.\
      \nIl offre un fort pouvoir désinfectant et une action bactéricide à large spectre. Non corrosif vis-à-vis de l'inox, du caoutchouc et des matières plastiques. Ne convient pas à l'aluminium. Le produit, concentré ou en solution d'emploi, ne doit pas être neutralisé ni mis en milieu acide.",
-    image: "/images/products/polixol.webp",
+    image: "/images/products/Polixol.webp",
     gammeSlug: "agroalimentaire",
     tags: ["Détergent", "Désinfectant", "Chloré", "Bactéricide", "Eaux très dures",],
     formats: ["25kg"],
