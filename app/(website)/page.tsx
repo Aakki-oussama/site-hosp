@@ -9,6 +9,8 @@ import { HowSection } from "./home/_components/how-section"
 import { GammesSection } from "./home/_components/gammes-section"
 import { CTASection } from "@/components/shared/cta-button"
 import { FAQContact } from "@/components/shared/faq-contact"
+import { RevealOnScroll } from "@/components/shared/animation/revealonscroll"
+
 
 
 export const metadata: Metadata = {
@@ -68,8 +70,12 @@ export default function HomePage() {
         <HowSection />
         <WhySection /> 
       </main>
+      <RevealOnScroll direction="up">
       <FAQContact className="bg-surface" />
+      </RevealOnScroll>
+      <RevealOnScroll direction="up">
       <CTASection/>
+      </RevealOnScroll>
     </>
   )
 }

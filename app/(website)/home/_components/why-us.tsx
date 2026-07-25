@@ -5,17 +5,24 @@ import { Separator } from "@/components/ui/separator"
 import { WhyImages } from "./why/why-images"
 import { WhyContent } from "./why/why-content"
 import { WhyUsFeatures } from "./why/why-features"
+import { RevealOnScroll } from "@/components/shared/animation/revealonscroll"
+
 
 export function WhySection() {
   return (
     <section className="bg-surface py-12">
       <div className="container-section">
+        
         <div className="grid items-start gap-2 md:gap-4 lg:grid-cols-2 lg:items-stretch lg:gap-16">
 
           {/* Left — image */}
-          <WhyImages />
+
+          <RevealOnScroll direction="left">
+            <WhyImages />
+          </RevealOnScroll>
 
           {/* Right — content */}
+          <RevealOnScroll direction="right" delay={0.15}>
           <div className="flex flex-col gap-4 md:gap-4 lg:gap-6">
             <WhyContent />
             <Separator />
@@ -28,6 +35,7 @@ export function WhySection() {
               </Link>
             </Button>
           </div>
+          </RevealOnScroll>
 
         </div>
       </div>

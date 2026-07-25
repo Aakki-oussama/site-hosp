@@ -7,12 +7,14 @@ interface RevealOnScrollProps {
   children: React.ReactNode
   className?: string
   direction?: "left" | "right" | "up"
+  delay?: number
 }
 
 export function RevealOnScroll({
   children,
   className,
   direction = "up",
+  delay = 0,
 }: RevealOnScrollProps) {
   const ref = useRef<HTMLDivElement>(null)
   const [visible, setVisible] = useState(false)
@@ -44,6 +46,7 @@ export function RevealOnScroll({
   return (
     <div
       ref={ref}
+      style={delay ? { transitionDelay: `${delay}s` } : undefined}
       className={cn(
         "reveal-section",
         `reveal-${direction}`,

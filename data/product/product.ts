@@ -142,7 +142,7 @@ export const products: Product[] = [
     shortDescription: "Solution hydro-alcoolique pour l'hygiène des mains, sans rinçage et prête à l'emploi.",
     fullDescription: "Solution hydro-alcoolique nettoyante et désinfectante, prête à l'emploi pour l'hygiène des mains sans rinçage. Recommandée par l'OMS pour l'antisepsie des mains.\
     \nLa friction permet d'améliorer l'observance de l'hygiène des mains, avec un gain de temps et une meilleure tolérance qu'un lavage des mains.",
-    image: "/images/products/ttt.webp",
+    image: "/images/products/Solution Hydro-Alcoolique.webp",
     gammeSlug: "medical",
     tags: ["Hygiène des mains", "Désinfectant", "Sans rinçage"],
     formats: ["50mL", "125mL", "500ml", "1L", "5L"],

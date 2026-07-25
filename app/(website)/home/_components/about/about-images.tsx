@@ -1,31 +1,29 @@
 import Image from "next/image"
+import { RevealOnScroll } from "@/components/shared/animation/revealonscroll"
+
 
 export function AboutImages() {
   return (
-    <div className="relative mx-auto w-full max-w-sm pb-10 md:mx-0 md:max-w-none md:pb-20 lg:pb-24">
+    <RevealOnScroll direction="left">
+    <div className="relative mx-auto w-full max-w-sm pb-10 md:mx-0 md:max-w-none md:pb-20 lg:pb-0 lg:h-full lg:flex lg:items-center ">
 
       {/* Main image — left, taller */}
-      <div className="relative mr-auto h-[22rem] w-[72%] overflow-hidden rounded-3xl sm:h-[26rem] lg:h-[32rem]">
+      
+      <div className="relative w-full min-h-[24rem] overflow-hidden rounded-3xl border-4 border-background shadow-xl md:min-h-[28rem] lg:min-h-[32rem]">
         <Image
-          src="/images/home/about-images.webp"
+          src="/images/home/about-us.webp"
           alt="Hygiène professionnelle Polaris Industrie Hosp"
           fill
           sizes="(max-width: 768px) 85vw, 45vw"
-          className="object-cover"
+          className="object-cover transition-transform duration-500 hover:scale-105"
           priority
         />
       </div>
 
-      {/* Small image — bottom-right, half inside half outside */}
-      <div className="absolute bottom-4 right-0 h-[12rem] w-[42%] overflow-hidden rounded-2xl border-4 border-background shadow-xl sm:h-[20rem] lg:h-[20rem]">
-        <Image
-          src="/images/home/gel.webp"
-          alt="Solutions désinfection certifiées Polaris"
-          fill
-          sizes="(max-width: 768px) 55vw, 25vw"
-          className="object-cover"
-        />
+      {/* Circular text badge — bottom-right */}
+      <div className="absolute bottom-4 right-0 z-10 flex h-[12rem] w-[42%] items-center justify-center sm:h-[20rem]">
       </div>
     </div>
+          </RevealOnScroll>
   )
 }

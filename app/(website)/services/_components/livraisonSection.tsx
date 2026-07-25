@@ -18,7 +18,7 @@ export function LivraisonSection() {
           <RevealOnScroll direction="left">
             <div className="order-2 lg:order-none relative aspect-[4/3] w-full overflow-hidden rounded-2xl bg-muted">
               <Image
-                src="/images/services/livraison.webp"
+                src="/images/services/shipping.webp"
                 alt="Livraison professionnelle Polaris Industrie Hosp au Maroc"
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"

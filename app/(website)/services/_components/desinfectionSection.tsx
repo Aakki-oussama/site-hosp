@@ -11,7 +11,7 @@ export function DesinfectionSection() {
     <section className="py-12 lg:py-16 bg-surface">
       <div className="container-section">
         {/* Text + Image */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-stretch">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
           {/* Text Left */}
           <RevealOnScroll direction="left">
@@ -52,7 +52,7 @@ export function DesinfectionSection() {
           <RevealOnScroll direction="right">
             <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl bg-background">
               <Image
-                src="/images/services/desinfectant.webp"
+                src="/images/services/desinfectants.webp"
                 alt="Produits de désinfection professionnelle Polaris"
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"

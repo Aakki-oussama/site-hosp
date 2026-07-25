@@ -1,5 +1,7 @@
 import { ShieldCheck, Sparkles } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
+import { RevealOnScroll } from "@/components/shared/animation/revealonscroll"
+
 
 const features = [
     { icon: ShieldCheck, label: "Fabricant direct certifié" },
