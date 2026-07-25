@@ -10,9 +10,9 @@ import { ClientsSection } from "./_components/clientSection"
 import { LivraisonSection } from "./_components/livraisonSection"
 
 export const metadata: Metadata = {
-  title: "Services d'hygiène professionnelle au Maroc",
+  title: "Nos Services",
   description:
-    "Découvrez nos services de nettoyage, désinfection, conseil et distribution de solutions professionnelles certifiées pour les établissements de santé, hôtellerie, industrie et collectivités au Maroc.",
+    "Nettoyage, désinfection et distribution de solutions d'hygiène certifiées EN/NF pour établissements de santé, hôtellerie et industrie au Maroc.",
   keywords: [
     "services hygiène professionnelle Maroc",
     "service nettoyage professionnel Rabat",
@@ -24,14 +24,29 @@ export const metadata: Metadata = {
     "Polaris Industrie HOSP",
   ],
   openGraph: {
-    title: "Services d'hygiène professionnelle au Maroc | Polaris Industrie HOSP",
+    title: "Nos Services | Polaris Industrie HOSP",
     description:
-      "Polaris Industrie HOSP propose des services de nettoyage, désinfection, conseil et livraison de solutions professionnelles adaptées aux besoins des établissements au Maroc.",
+      "Nettoyage, désinfection, conseil et livraison de produits d'hygiène certifiés pour les professionnels au Maroc.",
     url: "https://polaris-industriehosp.com/services",
     siteName: "Polaris Industrie HOSP",
     locale: "fr_MA",
     type: "website",
   },
+  
+  robots: {
+    index: true,
+    follow: true,
+    nocache: false,
+    googleBot: {
+      index: true,
+      follow: true,
+      noimageindex: false,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+
   alternates: {
     canonical: "https://polaris-industriehosp.com/services",
   },

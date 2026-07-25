@@ -25,9 +25,9 @@
   --ring: oklch(0.705 0.015 286.067);
 
   --radius: 0.625rem;
-  
 
-/* Brand Colors */
+
+  /* Brand Colors */
   --brand-blue: oklch(0.5 0.134 242.749);
   --brand-blue-foreground: oklch(0.977 0.013 236.62);
   --brand-green: oklch(0.627 0.194 149.214);
@@ -68,35 +68,35 @@
 }
 
 @theme inline {
-    --font-sans: var(--font-sans);
-    --font-heading: var(--font-heading);
-    --color-ring: var(--ring);
-    --color-input: var(--input);
-    --color-border: var(--border);
-    --color-destructive: var(--destructive);
-    --color-accent-foreground: var(--accent-foreground);
-    --color-accent: var(--accent);
-    --color-muted-foreground: var(--muted-foreground);
-    --color-muted: var(--muted);
-    --color-secondary-foreground: var(--secondary-foreground);
-    --color-secondary: var(--secondary);
-    --color-primary-foreground: var(--primary-foreground);
-    --color-primary: var(--primary);
-    --color-popover-foreground: var(--popover-foreground);
-    --color-popover: var(--popover);
-    --color-card-foreground: var(--card-foreground);
-    --color-card: var(--card);
-    --color-foreground: var(--foreground);
-    --color-background: var(--background);
-    --radius-sm: calc(var(--radius) * 0.6);
-    --radius-md: calc(var(--radius) * 0.8);
-    --radius-lg: var(--radius);
-    --radius-xl: calc(var(--radius) * 1.4);
-    --radius-2xl: calc(var(--radius) * 1.8);
-    --radius-3xl: calc(var(--radius) * 2.2);
-    --radius-4xl: calc(var(--radius) * 2.6);
+  --font-sans: var(--font-sans);
+  --font-heading: var(--font-heading);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
 
-    /* Brand Colors */
+  /* Brand Colors */
   --color-brand-blue: var(--brand-blue);
   --color-brand-blue-foreground: var(--brand-blue-foreground);
   --color-brand-green: var(--brand-green);
@@ -116,13 +116,18 @@
   }
 
   html {
-    @apply font-sans;  }
+    @apply font-sans;
+  }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-heading;
   }
 }
-
 
 /* for section */
 @utility container-section {
@@ -130,19 +135,24 @@
   margin-inline: auto;
   padding-inline: 1.5rem;
   max-width: 80rem;
-  @media (min-width: 1024px) { padding-inline: 2rem; }
-}
 
+  @media (min-width: 1024px) {
+    padding-inline: 2rem;
+  }
+}
 
 @utility container-page {
   width: 100%;
   margin-inline: auto;
   padding-inline: 1.25rem;
   max-width: 80rem;
-  @media (min-width: 768px) { padding-inline: 4rem; }
+
+  @media (min-width: 768px) {
+    padding-inline: 4rem;
+  }
 }
 
-/* this is for the brand color in footer*/ 
+/* this is for the brand color in footer*/
 @utility text-gradient-brand {
   background: var(--gradient-brand);
   -webkit-background-clip: text;
@@ -164,11 +174,25 @@
   transform: translateY(0);
 }
 
-.timeline-item:nth-child(2) { transition-delay: 0.05s; }
-.timeline-item:nth-child(3) { transition-delay: 0.1s; }
-.timeline-item:nth-child(4) { transition-delay: 0.15s; }
-.timeline-item:nth-child(5) { transition-delay: 0.2s; }
-.timeline-item:nth-child(6) { transition-delay: 0.25s; }
+.timeline-item:nth-child(2) {
+  transition-delay: 0.05s;
+}
+
+.timeline-item:nth-child(3) {
+  transition-delay: 0.1s;
+}
+
+.timeline-item:nth-child(4) {
+  transition-delay: 0.15s;
+}
+
+.timeline-item:nth-child(5) {
+  transition-delay: 0.2s;
+}
+
+.timeline-item:nth-child(6) {
+  transition-delay: 0.25s;
+}
 
 @media (prefers-reduced-motion: reduce) {
   .timeline-item {
@@ -181,16 +205,27 @@
 /* ─── Marquee Animations ─────────────────────────────────────────────────── */
 
 @keyframes marquee-x {
-  from { transform: translateX(0); }
-  to { transform: translateX(calc(-100% - var(--gap))); }
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(calc(-100% - var(--gap)));
+  }
 }
 
 @keyframes marquee-y {
-  from { transform: translateY(0); }
-  to { transform: translateY(calc(-100% - var(--gap))); }
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(calc(-100% - var(--gap)));
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
+
   [style*="marquee-x"],
   [style*="marquee-y"] {
     animation: none !important;
@@ -226,6 +261,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+
   .animate-slide-up,
   .animate-slide-up-delay-1,
   .animate-slide-up-delay-2 {
@@ -277,26 +313,27 @@
 
 @layer utilities {
 
- .home-title {
-  @apply font-heading text-3xl font-bold tracking-tight leading-tight lg:text-4xl;
-}
+  .home-title {
+    @apply font-heading text-3xl font-bold tracking-tight leading-tight lg:text-4xl;
+  }
 
   .feature-title {
     @apply font-heading text-4xl font-bold tracking-tight lg:text-5xl;
   }
 
   .feature-item {
-  @apply text-base font-medium leading-6 text-foreground;
-}
+    @apply text-base font-medium leading-6 text-foreground;
+  }
+
   .h-title {
-   @apply font-heading text-3xl font-bold tracking-tight leading-tight;
+    @apply font-heading text-3xl font-bold tracking-tight leading-tight;
   }
 
   .section-description {
-  @apply text-base leading-7 text-muted-foreground;
-}
+    @apply text-base leading-7 text-muted-foreground;
+  }
 
-.card-description {
-  @apply text-sm leading-6 text-muted-foreground;
-}
+  .card-description {
+    @apply text-sm leading-6 text-muted-foreground;
+  }
 }

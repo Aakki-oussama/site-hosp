@@ -12,7 +12,7 @@ import { FAQContact } from "@/components/shared/faq-contact"
 
 
 export const metadata: Metadata = {
-  title: "Polaris Industrie HOSP - Hygiène et Désinfection | Maroc",
+
   description:
     "Fabricant marocain de produits d'hygiène et de désinfection professionnelle certifiés EN/NF. Solutions adaptées aux hôpitaux, hôtels et industries au Maroc.",
   keywords: [
@@ -35,6 +35,20 @@ export const metadata: Metadata = {
     siteName: "Polaris Industrie HOSP",
     locale: "fr_MA",
     type: "website",
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+    nocache: false,
+    googleBot: {
+      index: true,
+      follow: true,
+      noimageindex: false,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
   alternates: {
     canonical: "https://polaris-industriehosp.com",

@@ -20,14 +20,19 @@ export function Navbar() {
 
     return (
     <header
-  className={cn(
-    "fixed z-50 transition-all duration-300",
-    "top-0 left-0 right-0 w-full bg-background/90 backdrop-blur-md border-b border-border",
-    "lg:top-4 lg:left-1/2 lg:-translate-x-1/2 lg:w-[calc(100%-2rem)] lg:max-w-7xl lg:rounded-full lg:border lg:shadow-md",
-    "lg:bg-muted/50 lg:backdrop-blur-xl lg:border-white/20"
-     )}
-       >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      className={cn(
+        "fixed z-50 transition-all duration-300",
+        "top-0 inset-x-0 w-full bg-background/90 backdrop-blur-md border-b border-border",
+        "lg:top-4 lg:bg-transparent lg:backdrop-blur-none lg:border-none lg:shadow-none"
+      )}
+    >
+      <div
+        className={cn(
+          "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8",
+          "lg:rounded-full lg:border lg:shadow-md",
+          "lg:bg-muted/50 lg:backdrop-blur-xl lg:border-white/20"
+        )}
+      >
         <div className="flex items-center justify-between h-16 lg:h-20">
           <Link href="/" className="flex shrink-0 items-center">
             <span className="font-heading font-bold text-lg tracking-tight text-gradient-brand">

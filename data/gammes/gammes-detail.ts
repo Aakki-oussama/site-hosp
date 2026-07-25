@@ -28,7 +28,7 @@ export const gammesDetails: GammeDetail[] = [
     description: "Désinfectants certifiés pour environnements médicaux et hospitaliers.",
     icon: Stethoscope,
     usagePlaces: ["Hôpital", "Clinique", "Laboratoires"],
-    image: "/images/gamme/medical-1.webp",
+    image: "/images/gamme/gamme-medical.webp",
   },
   {
     slug: "home",
@@ -56,6 +56,6 @@ export const gammesDetails: GammeDetail[] = [
     description: "Détergent et désinfectant professionnel pour le nettoyage des surfaces et équipements de l'industrie agro-alimentaire.",
     icon: Factory,
     usagePlaces: ["Industrie Agro-alimentaire"],
-    image: "/images/gamme/Agro-Alimentaire.webp",
+    image: "/images/gamme/Agroalimentaire-gamme.webp",
   },
 ]

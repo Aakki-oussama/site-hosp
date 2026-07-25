@@ -142,7 +142,7 @@ export const products: Product[] = [
     shortDescription: "Solution hydro-alcoolique pour l'hygiène des mains, sans rinçage et prête à l'emploi.",
     fullDescription: "Solution hydro-alcoolique nettoyante et désinfectante, prête à l'emploi pour l'hygiène des mains sans rinçage. Recommandée par l'OMS pour l'antisepsie des mains.\
     \nLa friction permet d'améliorer l'observance de l'hygiène des mains, avec un gain de temps et une meilleure tolérance qu'un lavage des mains.",
-    image: "/images/products/Solution-hydroalcoolique.webp",
+    image: "/images/products/ttt.webp",
     gammeSlug: "medical",
     tags: ["Hygiène des mains", "Désinfectant", "Sans rinçage"],
     formats: ["50mL", "125mL", "500ml", "1L", "5L"],
@@ -168,7 +168,7 @@ export const products: Product[] = [
     image: "/images/products/SansZo.webp",
     gammeSlug: "medical",
     tags: ["Usage fréquent", "Usage professionnel"],
-    formats: ["750ml", "5L"],
+    formats: ["500ml", "5L"],
     surface: ["Mains", "Avant-bras"],
     benefits: [
       { icon: ShieldPlus, label: "ACTION BACTERICIDE", description: "Elimne efficacement les bactéries" },
@@ -209,7 +209,7 @@ export const products: Product[] = [
 
   {
     id: "med-6",
-    slug: "Poloxyd-2.5",
+    slug: "Poloxyd-2-5",
     name: "Poloxyd-2.5",
     shortDescription: "Désinfectant à froid pour générateurs d'hémodialyse et dispositifs de traitement d'eau.",
     fullDescription: "Désinfectant à froid prêt à l'emploi pour désinfection et détartrage des générateurs d'hémodialyse et dispositif de traitement d'eau.",
@@ -287,7 +287,7 @@ export const products: Product[] = [
     shortDescription: "Détergent et désinfectant alcalin chloré pour l'industrie agro-alimentaire.",
     fullDescription: "Détergent et désinfectant alcalin chloré spécialement formulé pour le nettoyage et la désinfection avec des équipements à projection de mousse sure les surfaces ouvertes et les équipements de l'industrie agro-alimentaire en générale et particulièrement de l'industrie des viandes et des produits cariés.\
      \nEt pour éviter la formation de film sous lequel peuvent se nicher les bactéries, on utilise le POLIFAOM-AC par alternance avec POLIFAM-CL.",
-    image: "/images/products/Polifoam-cl.webp",
+    image: "/images/products/Polifoam-cl-25kg.webp",
     gammeSlug: "agroalimentaire",
     tags: ["Détergent", "Désinfectant", "Alcalin chloré", "Agro-alimentaire",],
     formats: ["25kg"],
@@ -309,7 +309,7 @@ export const products: Product[] = [
     shortDescription: "Détergent totalement soluble dans l'eau, avec une excellente rinçabilité.",
     fullDescription: "Totalement soluble dans l'eau et insensible à sa dureté. Il offre une excellente rinçabilité ainsi qu'un bon pouvoir peptisant et mouillant.\
     \nIl ne réagit pas avec le CO₂, ce qui permet d'éviter les risques de chute de pression liés à la neutralisation.",
-    image: "/images/products/Polinet.webp",
+    image: "/images/products/Polinet-25kg.webp",
     gammeSlug: "agroalimentaire",
     tags: ["Détergent", "Soluble dans l'eau", "Rinçage facile", "Pouvoir mouillant",],
     formats: ["25kg"],
@@ -331,7 +331,7 @@ export const products: Product[] = [
     shortDescription: "Détergent et désinfectant chloré puissant, adapté aux eaux de très forte dureté.",
     fullDescription: "Spécialement indiqué pour les eaux de très forte dureté. Il évite la formation de pierre de lait et de Bierstein. Totalement exempt de formation de mousse, il possède un important pouvoir détergent et un chlore très stable.\
      \nIl offre un fort pouvoir désinfectant et une action bactéricide à large spectre. Non corrosif vis-à-vis de l'inox, du caoutchouc et des matières plastiques. Ne convient pas à l'aluminium. Le produit, concentré ou en solution d'emploi, ne doit pas être neutralisé ni mis en milieu acide.",
-    image: "/images/products/Polixol.webp",
+    image: "/images/products/Polixol-25kg.webp",
     gammeSlug: "agroalimentaire",
     tags: ["Détergent", "Désinfectant", "Chloré", "Bactéricide", "Eaux très dures",],
     formats: ["25kg"],

@@ -4,9 +4,9 @@ import { GammeClient } from "./_components/gamme-client"
 import { CTASection } from "@/components/shared/cta-button"
 
 export const metadata: Metadata = {
-  title: "Gammes de produits d'hygiène et de désinfection au Maroc",
+  title: "Nos Gammes",
   description:
-    "Découvrez nos gammes de produits de nettoyage, désinfection et hygiène professionnelle conçues pour les établissements de santé, hôtellerie, industrie et collectivités au Maroc.",
+    "Découvrez nos gammes de produits de nettoyage et désinfection professionnelle certifiés pour les établissements de santé, hôtellerie et industrie au Maroc.",
   keywords: [
     "gammes produits hygiène Maroc",
     "produits nettoyage professionnel Maroc",
@@ -18,13 +18,27 @@ export const metadata: Metadata = {
     "Polaris Industrie HOSP",
   ],
   openGraph: {
-    title: "Gammes de produits d'hygiène et de désinfection au Maroc | Polaris Industrie HOSP",
+    title: "Nos Gammes | Polaris Industrie HOSP",
     description:
-      "Explorez les gammes de produits de nettoyage et de désinfection professionnelles de Polaris Industrie HOSP pour répondre aux besoins des professionnels au Maroc.",
+      "Explorez nos gammes de produits de nettoyage et désinfection professionnels certifiés EN/NF pour les professionnels au Maroc.",
     url: "https://polaris-industriehosp.com/gammes",
     siteName: "Polaris Industrie HOSP",
     locale: "fr_MA",
     type: "website",
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+    nocache: false,
+    googleBot: {
+      index: true,
+      follow: true,
+      noimageindex: false,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
   alternates: {
     canonical: "https://polaris-industriehosp.com/gammes",

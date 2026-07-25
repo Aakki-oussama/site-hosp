@@ -13,22 +13,39 @@ export const metadata: Metadata = {
   title: "Contact",
   description:
     `Contactez ${companyInfo.name} à Rabat pour un devis personnalisé sur nos produits d'hygiène et désinfection professionnelle. Réponse rapide garantie.`,
-  keywords: [
-    "contact Polaris Industrie",
-    "devis hygiène Maroc",
-    "désinfectant professionnel Rabat",
-    "hygiène hospitalière Maroc",
-    "produits désinfection Témara",
-  ],
+ keywords: [
+  "contact Polaris Industrie Hosp",
+  "devis hygiène professionnelle Maroc",
+  "désinfectant professionnel Rabat",
+  "hygiène hospitalière Maroc",
+  "produits désinfection Témara",
+  "demande devis désinfection Maroc",
+  "contact fabricant hygiène Rabat",
+],
   openGraph: {
     title: "Contact | Polaris Industrie HOSP",
     description:
-      "Demandez un devis ou posez vos questions sur nos solutions d'hygiène et désinfection professionnelle au Maroc.",
+      "Contactez Polaris Industrie Hosp pour un devis sur nos produits d'hygiène et désinfection certifiés. Notre équipe vous répond rapidement.",
     url: "https://polaris-industriehosp.com/contact",
     siteName: "Polaris Industrie HOSP",
     locale: "fr_MA",
     type: "website",
   },
+  
+robots: {
+    index: true,
+    follow: true,
+    nocache: false,
+    googleBot: {
+      index: true,
+      follow: true,
+      noimageindex: false,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+
   alternates: {
     canonical: "https://polaris-industriehosp.com/contact",
   },
