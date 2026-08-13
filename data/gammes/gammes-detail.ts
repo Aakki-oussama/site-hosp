@@ -38,7 +38,7 @@ export const gammesDetails: GammeDetail[] = [
     icon: Home,
     usagePlaces: ["Résidence", "Hôtel", "Home"],
     // TODO: replace with /images/gammes/home.webp
-    image: "/images/products/Megasept-sa.webp",
+    image: "/images/gamme/gamme-home.webp",
   },
   {
     slug: "aqua",

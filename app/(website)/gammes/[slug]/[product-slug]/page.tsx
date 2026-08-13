@@ -17,7 +17,7 @@ import { ProductInfo } from "./_components/partiels/product-info"
 import { ProductSidebar } from "./_components/partiels/product-sidebar"
 import { ProductFicheTechnique } from "./_components/partiels/product-fiche-technique"
 import { ProductBenefits } from "./_components/partiels/product-benefits"
-import{ RelatedProducts } from "@/components/shared/related-product"
+import { RelatedProducts } from "@/components/shared/related-product"
 
 interface PageProps {
   params: Promise<{
@@ -39,17 +39,38 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: product.name,
     description: product.shortDescription,
+    keywords: [
+      product.name,
+      `${product.name} Maroc`,
+      `acheter ${product.name}`,
+      "Polaris Industrie Hosp",
+      "hygiène professionnelle Maroc",
+      "fabricant désinfectants Rabat",
+    ],
+    openGraph: {
+      title: `${product.name} | Polaris Industrie Hosp`,
+      description: product.shortDescription,
+      url: `https://polaris-industriehosp.com/gammes/${slug}/${productSlug}`,
+      siteName: "Polaris Industrie HOSP",
+      locale: "fr_MA",
+      type: "website",
+    },
+    robots: {
+      index: true,
+      follow: true,
+      nocache: false,
+      googleBot: {
+        index: true,
+        follow: true,
+        noimageindex: false,
+        "max-video-preview": -1,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+      },
+    },
     alternates: {
       canonical: `https://polaris-industriehosp.com/gammes/${slug}/${productSlug}`,
     },
-    openGraph: {
-  title: `${product.name} | Polaris Industrie Hosp`,
-  description: product.shortDescription,
-  url: `https://polaris-industriehosp.com/gammes/${slug}/${productSlug}`,
-  siteName: "Polaris Industrie HOSP",
-  locale: "fr_MA",
-  type: "website",
-},
   }
 }
 
@@ -65,12 +86,14 @@ export default async function ProductPage({ params }: PageProps) {
     notFound()
   }
 
-  // Safe fallback to prevent crashes on missing optional fields (like domaines mapping)
+  // Safe fallback to prevent crashes on missing optional fields
   const mergedProduct = {
     ...product,
     fullDescription: product.fullDescription || "Fiche technique détaillée en cours de rédaction par nos équipes. Pour toute question, veuillez nous contacter.",
     domaine: product.domaine || [],
   }
+
+  const gammeName = `${gamme.title}${gamme.highlightedTitle ? ` ${gamme.highlightedTitle}` : ""}`.trim()
 
   return (
     <>
@@ -85,7 +108,7 @@ export default async function ProductPage({ params }: PageProps) {
             <BreadcrumbSeparator />
             <BreadcrumbItem>
               <BreadcrumbLink asChild>
-                <Link href={`/gammes/${slug}`}>{`${gamme.title}${gamme.highlightedTitle ? ` ${gamme.highlightedTitle}` : ""}`.trim()}</Link>
+                <Link href={`/gammes/${slug}`}>{gammeName}</Link>
               </BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator />
@@ -105,7 +128,7 @@ export default async function ProductPage({ params }: PageProps) {
             <div className="lg:col-span-5">
               <ProductInfo
                 product={mergedProduct}
-                gammeName={`${gamme.title}${gamme.highlightedTitle ? ` ${gamme.highlightedTitle}` : ""}`.trim()}
+                gammeName={gammeName}
                 gammeIcon={gamme.icon}
               />
             </div>
@@ -121,11 +144,13 @@ export default async function ProductPage({ params }: PageProps) {
             <ProductFicheTechnique />
           </div>
         </section>
+
         <RelatedProducts
-         currentSlug={productSlug}
-        gammeSlug={slug}
-          />
+          currentSlug={productSlug}
+          gammeSlug={slug}
+        />
       </main>
+
       <CTASection />
     </>
   )

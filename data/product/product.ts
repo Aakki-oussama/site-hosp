@@ -21,6 +21,8 @@ import {
   Zap,
   Hand,
   HeartPulse,
+  Shirt,
+  WashingMachine,
 } from "lucide-react"
 
 // ─── Types ────────────────────────────────────────────────────────────────────
@@ -59,27 +61,55 @@ export const products: Product[] = [
   // ─── Gamme Home ─────────────────────────────────────────────────────────────
   {
     id: "home-1",
-    slug: "nettoyant-multi-surfaces",
-    name: "Nettoyant Multi-surfaces",
-    shortDescription: "Nettoie, dégraisse et fait briller toutes les surfaces sans laisser de traces.",
-    fullDescription:
-      "Le Nettoyant Multi-surfaces Polaris est une solution polyvalente conçue pour nettoyer et dégraisser efficacement toutes les surfaces lavables. Sa formule avancée élimine les salissures tenaces tout en laissant un film protecteur brillant. Idéal pour un usage intensif en milieu professionnel ou domestique.",
-    image: "/images/products/nettoyant-multi-surfaces.webp",
+    slug: "Tensyl-t50",
+    name: "Tensyl T50",
+    shortDescription: "Lessive liquide professionnelle haute performance pour le lavage de tous types de textiles.",
+    fullDescription: "Tensyl-T50 est une lessive liquide professionnelle conçue pour le lavage efficace du linge en blanchisseries, hôtels, collectivités, établissements de santé et industries. Sa formule concentrée élimine efficacement les salissures, les taches courantes et les mauvaises odeurs tout en préservant la douceur des fibres et l'éclat des couleurs.\
+    \nCompatible avec les lavages en machine, elle garantit d'excellents résultats dès les basses températures et convient à un usage fréquent.",
+    image: "/images/products/tensyl-t50.webp",
     // cardImage: optionnel, utilisera automatiquement "image" par défaut
     gammeSlug: "home",
-    tags: ["Toutes surfaces", "Sans rinçage", "Parfumé"],
-    formats: ["750ml", "1L", "5L"],
-    surface: ["Plans de travail", "Tables", "Appareils électroménagers"],
+    tags: ["Lessive liquide", "usage professionnel", "Tous textiles"],
+    formats: ["1L", "5L" ,"25L"],
+    surface: ["Linge de couleur", "Linge blanc"],
     benefits: [
-      { icon: Droplets, label: "Nettoie efficacement", description: "Élimine salissures et graisses du quotidien en un seul passage." },
-      { icon: FlaskConical, label: "Dégraisse en profondeur", description: "Formule concentrée qui attaque les dépôts tenaces sans abîmer les surfaces." },
-      { icon: Building2, label: "Sans laisser de traces", description: "Finition propre et brillante sur toutes les surfaces lisses." },
+      { icon: Sparkles, label: "Élimine les taches", description: "" },
+      { icon: Shirt, label: "Respecte les fibres", description: "" },
+      { icon: Droplets, label: "Efficace dès basse température", description: "" },
     ],
-    domaine: [
-      { icon: Building2, label: "Résidences" },
-      { icon: Hotel, label: "Hôtels" },
-      { icon: UtensilsCrossed, label: "Restauration" },
+   domaine: [
+    { icon: Hotel, label: "Hôtels" },
+    { icon: Hospital, label: "Hôpitaux et Cliniques" },
+    { icon: Users, label: "Collectivités" },
+    { icon: Factory, label: "Industries" },
+    { icon: WashingMachine, label: "Blanchisseries" }
+  ],
+  },
+
+  {
+    id: "home-2",
+    slug: "Eau-de-Javel-12",
+    name: "Eau de Javel 12",
+    shortDescription: "Désinfectant professionnel pour le nettoyage des surfaces et équipements.",
+    fullDescription: "L'Eau de Javel 12 est un désinfectant professionnel conçu pour le nettoyage efficace des surfaces et équipements dans les environnements hospitaliers et de santé. Sa formule puissante élimine efficacement les bactéries, virus et champignons tout en assurant une protection durable.",
+    image: "/images/products/eau-javel.webp",
+    // cardImage: optionnel, utilisera automatiquement "image" par défaut
+    gammeSlug: "home",
+    tags: ["Lessive liquide", "usage professionnel", "Tous textiles"],
+    formats: ["1L", "5L" ,"25L"],
+    surface: ["Linge de couleur", "Linge blanc"],
+    benefits: [
+      { icon: Sparkles, label: "Élimine les taches", description: "" },
+      { icon: Shirt, label: "Respecte les fibres", description: "" },
+      { icon: Droplets, label: "Efficace dès basse température", description: "" },
     ],
+   domaine: [
+    { icon: Hotel, label: "Hôtels" },
+    { icon: Hospital, label: "Hôpitaux et Cliniques" },
+    { icon: Users, label: "Collectivités" },
+    { icon: Factory, label: "Industries" },
+    { icon: WashingMachine, label: "Blanchisseries" }
+  ],
   },
 
   // ─── Gamme Médical ──────────────────────────────────────────────────────────
