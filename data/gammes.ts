@@ -26,7 +26,7 @@ export const gammes: Gamme[] = [
     icon: "Stethoscope",
     color: "green",
   },
-  {
+  /*{
     id: "aqua",
     slug: "aqua",
     name: "Gamme Aqua",
@@ -34,7 +34,7 @@ export const gammes: Gamme[] = [
       "Traitement et purification de l'eau pour usage industriel",
     icon: "Droplets",
     color: "blue",
-  },
+  },*/
   {
     id: "Agroalimentaire",
     slug: "agroalimentaire",

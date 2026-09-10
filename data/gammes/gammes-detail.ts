@@ -40,7 +40,7 @@ export const gammesDetails: GammeDetail[] = [
     // TODO: replace with /images/gammes/home.webp
     image: "/images/gamme/gamme-home.webp",
   },
-  {
+  /*{
     slug: "aqua",
     title: "Gamme",
     highlightedTitle: "Aqua",
@@ -48,7 +48,7 @@ export const gammesDetails: GammeDetail[] = [
     icon: Droplets,
     usagePlaces: ["Industrie", "Piscine", "Collectivité"],
     image: "/images/products/Sans-zo.webp",
-  },
+  },*/
   {
     slug: "agroalimentaire",
     title: "Gamme",

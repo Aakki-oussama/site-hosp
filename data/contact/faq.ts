@@ -30,16 +30,16 @@ export const faqs: FAQItem[] = [
     question: "Comment obtenir un devis pour une commande en grand volume ou un contrat annuel ?",
     answer: "Vous pouvez soumettre votre demande via le formulaire de contact ci-dessus en sélectionnant le type 'Société' et en décrivant votre projet, ou nous appeler directement. Un conseiller vous répondra sous 24 heures.",
   },
-  {
+  /*{
     id: "modification-commande",
     question: "Puis-je modifier ou annuler une commande après validation ?",
     answer: "Tant que votre commande est en cours de traitement et n'a pas quitté notre entrepôt, vous pouvez la modifier ou l'annuler en contactant rapidement notre service client par téléphone.",
-  },
-  {
+  },*/
+  /*{
     id: "fiches-techniques-fds",
     question: "Fournissez-vous les fiches techniques et fiches de données de sécurité (FDS) ?",
     answer: "Oui, pour chaque produit commandé, nous pouvons vous fournir les fiches techniques (FT) ainsi que les fiches de données de sécurité (FDS) conformes à la réglementation en vigueur.",
-  },
+  },*/
   {
     id: "formation-utilisation",
     question: "Proposez-vous une assistance ou des formations sur l'usage de vos produits ?",

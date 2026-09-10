@@ -21,8 +21,8 @@ export const particulierSchema = z.object({
     .max(100)
     .regex(nameRegex, nameErrorMessage),
   telephone: phoneSchema,
-  email: emailSchema.optional(),
-  ville: z.string().trim().optional(),
+  email: z.email("Email invalide"),
+  ville: z.string().trim().max(100).regex(/^[a-zA-ZÀ-ÿ\s'-]*$/, nameErrorMessage).optional().or(z.literal("")),
   objet: z.string().trim().min(1, "L'objet est requis"),
   message: z.string().trim().min(10, "Le message doit contenir au moins 10 caractères").max(5000),
   honeypot: z.string().optional(),
@@ -44,9 +44,9 @@ export const societeSchema = z.object({
     .optional()
     .or(z.literal("")),
   telephone: phoneSchema,
-  email: emailSchema.optional(),
-  ville: z.string().trim().optional(),
-  secteur: z.string().trim().min(1, "Le secteur d'activité est requis"),
+  email: z.email("Email invalide"),
+  ville: z.string().trim().max(100).regex(/^[a-zA-ZÀ-ÿ\s'-]*$/, nameErrorMessage).optional().or(z.literal("")),
+  secteur: z.string().trim().min(2, "Le secteur d'activité est requis").max(150).regex(/^[a-zA-ZÀ-ÿ\s'/-]*$/, nameErrorMessage),
   objet: z.string().trim().optional(),
   message: z.string().trim().min(10, "Le message doit contenir au moins 10 caractères").max(5000),
   honeypot: z.string().max(0, "Bot detected").optional(),

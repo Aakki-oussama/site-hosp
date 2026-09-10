@@ -16,8 +16,8 @@ export const companyInfo = {
   address: "Villa N°6 Bloc J Rue Zofa Sect 4 Hay Riad, Rabat",
   factory: "205 Av Hassan II · Témara",
   businessHours: [
-    { label: "Lundi à Vendredi", hours: "8h00 - 16h00" },
-    { label: "Samedi", hours: "8h00 - 10h00" },
+    { label: "Lundi à Vendredi", hours: "8h00 - 17h00" },
+    { label: "Samedi", hours: "8h00 - 12h00" },
   ],
   social: {
     linkedin: "",

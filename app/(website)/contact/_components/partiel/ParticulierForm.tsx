@@ -1,10 +1,9 @@
 "use client"
 
-import { useForm, useWatch } from "react-hook-form"
+import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import type { ParticulierFormData } from "@/lib/validations/contact"
 import { particulierSchema } from "@/lib/validations/contact"
-import { villes } from "@/data/contact/villes"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
@@ -16,13 +15,6 @@ import {
   FieldContent,
   FieldError,
 } from "@/components/ui/field"
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select"
 
 interface ParticulierFormProps {
   onSubmit: (data: ParticulierFormData) => Promise<boolean>
@@ -33,8 +25,6 @@ export function ParticulierForm({ onSubmit, isLoading = false }: ParticulierForm
   const {
     register,
     handleSubmit,
-    control,
-    setValue,
     reset,
     formState: { errors },
   } = useForm<ParticulierFormData>({
@@ -52,7 +42,7 @@ export function ParticulierForm({ onSubmit, isLoading = false }: ParticulierForm
     },
   })
 
-  const villeValue = useWatch({ control, name: "ville" })
+
 
   const handleSubmitForm = async (data: ParticulierFormData) => {
     try {
@@ -105,7 +95,7 @@ export function ParticulierForm({ onSubmit, isLoading = false }: ParticulierForm
         {/* Email */}
         <Field>
           <FieldLabel>
-            <Label htmlFor="email">Email (optionnel)</Label>
+            <Label htmlFor="email">Email *</Label>
           </FieldLabel>
           <FieldContent>
             <Input
@@ -126,24 +116,13 @@ export function ParticulierForm({ onSubmit, isLoading = false }: ParticulierForm
             <Label htmlFor="ville">Ville (optionnel)</Label>
           </FieldLabel>
           <FieldContent>
-            <Select
-              name="ville"
-              value={villeValue ?? ""}
-              onValueChange={(value) => setValue("ville", value, { shouldValidate: true, shouldDirty: true })}
-            >
-              <SelectTrigger
-                id="ville"
-              >
-                <SelectValue placeholder="Choisir une ville" />
-              </SelectTrigger>
-              <SelectContent>
-                {villes.map((ville) => (
-                  <SelectItem key={ville.value} value={ville.value}>
-                    {ville.label}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
+            <Input
+              id="ville"
+              placeholder="Ex: Rabat"
+              {...register("ville")}
+              aria-invalid={!!errors.ville}
+            />
+            {errors.ville && <FieldError errors={[{ message: errors.ville.message }]} />}
           </FieldContent>
         </Field>
 

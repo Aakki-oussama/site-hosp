@@ -24,7 +24,7 @@ export function RevealOnScroll({
 
     // Respect users who prefer reduced motion
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      setVisible(true)
+      requestAnimationFrame(() => setVisible(true))
       return
     }
 

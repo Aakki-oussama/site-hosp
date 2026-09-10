@@ -1,11 +1,9 @@
 "use client"
 
-import { useForm, useWatch } from "react-hook-form"
+import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import type { SocieteFormData } from "@/lib/validations/contact"
 import { societeSchema } from "@/lib/validations/contact"
-import { villes } from "@/data/contact/villes"
-import { secteurs } from "@/data/contact/secteurs"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
@@ -17,13 +15,6 @@ import {
   FieldContent,
   FieldError,
 } from "@/components/ui/field"
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select"
 
 interface SocieteFormProps {
   onSubmit: (data: SocieteFormData) => Promise<boolean>
@@ -34,8 +25,6 @@ export function SocieteForm({ onSubmit, isLoading = false }: SocieteFormProps) {
   const {
     register,
     handleSubmit,
-    control,
-    setValue,
     reset,
     formState: { errors },
   } = useForm<SocieteFormData>({
@@ -55,8 +44,7 @@ export function SocieteForm({ onSubmit, isLoading = false }: SocieteFormProps) {
     },
   })
 
-  const villeValue = useWatch({ control, name: "ville" })
-  const secteurValue = useWatch({ control, name: "secteur" })
+
 
   const handleSubmitForm = async (data: SocieteFormData) => {
     try {
@@ -129,7 +117,7 @@ export function SocieteForm({ onSubmit, isLoading = false }: SocieteFormProps) {
         {/* Email */}
         <Field>
           <FieldLabel>
-            <Label htmlFor="email">Email (optionnel)</Label>
+            <Label htmlFor="email">Email *</Label>
           </FieldLabel>
           <FieldContent>
             <Input
@@ -150,22 +138,13 @@ export function SocieteForm({ onSubmit, isLoading = false }: SocieteFormProps) {
             <Label htmlFor="ville">Ville (optionnel)</Label>
           </FieldLabel>
           <FieldContent>
-            <Select
-              name="ville"
-              value={villeValue ?? ""}
-              onValueChange={(value) => setValue("ville", value, { shouldValidate: true, shouldDirty: true })}
-            >
-              <SelectTrigger id="ville">
-                <SelectValue placeholder="Choisir une ville" />
-              </SelectTrigger>
-              <SelectContent>
-                {villes.map((ville) => (
-                  <SelectItem key={ville.value} value={ville.value}>
-                    {ville.label}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
+            <Input
+              id="ville"
+              placeholder="Ex: Casablanca"
+              {...register("ville")}
+              aria-invalid={!!errors.ville}
+            />
+            {errors.ville && <FieldError errors={[{ message: errors.ville.message }]} />}
           </FieldContent>
         </Field>
 
@@ -175,22 +154,12 @@ export function SocieteForm({ onSubmit, isLoading = false }: SocieteFormProps) {
             <Label htmlFor="secteur">Secteur d&apos;activité *</Label>
           </FieldLabel>
           <FieldContent>
-            <Select
-              name="secteur"
-              value={secteurValue ?? ""}
-              onValueChange={(value) => setValue("secteur", value, { shouldValidate: true, shouldDirty: true })}
-            >
-              <SelectTrigger id="secteur">
-                <SelectValue placeholder="Choisir un secteur" />
-              </SelectTrigger>
-              <SelectContent>
-                {secteurs.map((secteur) => (
-                  <SelectItem key={secteur.value} value={secteur.value}>
-                    {secteur.label}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
+            <Input
+              id="secteur"
+              placeholder="Ex: Industrie agroalimentaire"
+              {...register("secteur")}
+              aria-invalid={!!errors.secteur}
+            />
             {errors.secteur && <FieldError errors={[{ message: errors.secteur.message }]} />}
           </FieldContent>
         </Field>
