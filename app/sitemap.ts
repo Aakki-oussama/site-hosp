@@ -39,17 +39,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // Add dynamic gamme pages
     {
-      url: `https://${baseUrl}/gammes/home`,
+      url: `${baseUrl}/gammes/home`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.5,
     },
     {
-      url: `https://${baseUrl}/gammes/medical`,
+      url: `${baseUrl}/gammes/medical`,
+      lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.5,
     },
-
+    {
+      url: `${baseUrl}/gammes/agroalimentaire`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.5,
+    },
   ];
 }
 
