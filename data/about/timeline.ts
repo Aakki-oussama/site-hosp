@@ -7,39 +7,39 @@ export interface TimelineItem {
 
 export const timeline: TimelineItem[] = [
   {
-    year: "2010",
+    year: "1975",
     title: "Fondation",
     description:
       "Création de Polaris Industrie HOSP à Rabat par une équipe d'experts en hygiène et désinfection professionnelle.",
   },
   {
-    year: "2012",
-    title: "Premier client hospitalier",
+    year: "1996",
+    title: "Expansion agro-industrielle",
     description:
-      "Signature du premier contrat avec un établissement de santé public, marquant notre entrée dans le secteur médical.",
+      "Entrée dans le secteur agro-industriel avec la carte européenne.",
   },
   {
-    year: "2015",
-    title: "Certification qualité",
+    year: "2004-2008",
+    title: "Fabrication propre",
     description:
-      "Obtention des certifications selon les normes internationales EN/NF, attestant l'efficacité de nos produits.",
+      "Début de la production en propre avec homologation nationales.",
   },
   {
-    year: "2017",
-    title: "Expansion hôtelière",
+    year: "2009",
+    title: "Reprise startégique",
     description:
-      "Déploiement dans les grandes chaînes hôtelières et les établissements de restauration professionnelle.",
+      "Arrivée d'un nouveau propriétaire axé sur l'homologation des produits.",
   },
   {
-    year: "2019",
-    title: "Gamme écologique",
+    year: "2012-2013",
+    title: "Certification clés",
     description:
-      "Lancement de la première gamme de produits respectueux de l'environnement et biodégradables.",
+      "Reconnaissance officielle par les ministères, l'institut pasteur et l'ONSSA.",
   },
   {
-    year: "2024",
-    title: "Leader national",
+    year: "2013",
+    title: "Virage médical",
     description:
-      "Plus de 10 ans d'expertise et des centaines de clients actifs dans les secteurs hospitalier, hôtelier et industriel.",
+      "Entrée sur le marché médical averc produits haute performance.",
   },
 ]

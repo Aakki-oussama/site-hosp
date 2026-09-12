@@ -45,7 +45,7 @@ export const contactItems: ContactItem[] = [
     label: companyInfo.phoneDisplay,
     note: "Devis rapide sur nos produits d'hygiène",
   },
-
+/*
   {
     icon: Phone,
     iconClassName: "text-primary",
@@ -54,7 +54,7 @@ export const contactItems: ContactItem[] = [
     label: companyInfo.fax,
     note: "Envoi de documents et confirmations",
   },
-
+*/
   /*
   {
     icon: Mail,
@@ -69,8 +69,8 @@ export const contactItems: ContactItem[] = [
     icon: Mail,
     iconClassName: "text-primary",
     title: "Email information",
-    href: `mailto:${companyInfo.emailInfo}`,
-    label: companyInfo.emailInfo,
+    href: `mailto:${companyInfo.email}`,
+    label: companyInfo.email,
     note: "Demandez nos fiches produits",
   },
   {

@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card"
 
 // ─── Constants ────────────────────────────────────────────────────────────────
 
-const COMPANY_FOUNDED_YEAR = 2016
+const COMPANY_FOUNDED_YEAR = 1975
 const ANIMATION_DURATION = 1000 // ms
 
 // ─── Component ────────────────────────────────────────────────────────────────

@@ -42,7 +42,7 @@ export function TimelineSection() {
           <header className="mx-auto mb-16 max-w-2xl text-center">
             <Badge variant="subtle" className="mb-3 gap-2">
               <ShieldCheck aria-hidden="true" />
-              Depuis 2022
+              Depuis 1975
             </Badge>
             <h2
               id="timeline-heading"

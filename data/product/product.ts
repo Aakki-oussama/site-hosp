@@ -85,7 +85,6 @@ export const products: Product[] = [
     { icon: WashingMachine, label: "Blanchisseries" }
   ],
   },
-
   {
     id: "home-2",
     slug: "Eau-de-Javel-12",

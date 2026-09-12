@@ -10,7 +10,7 @@ export function HeroSection() {
       {/* Background Image */}
       <div className="absolute inset-0 -z-10">
         <Image
-          src="/images/home/hero-hero.webp"
+          src="/images/home/hero-4.webp"
           alt="Polaris Industrie Hosp — Hygiène professionnelle au Maroc"
           fill
           priority
@@ -25,7 +25,7 @@ export function HeroSection() {
       </div>
 
       {/* Content */}
-      <div className="container-section pb-16 lg:pb-24 pt-40 flex flex-col gap-5">
+      <div className="container-section pb-16 lg:pb-24 pt-30 lg:pt-40  flex flex-col gap-5">
         <HeroBadge />
         <HeroText />
         <HeroCta />

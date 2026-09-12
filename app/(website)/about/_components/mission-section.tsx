@@ -11,7 +11,7 @@ const missionPoints = [
 
 const visionStats = [
   { icon: Award, label: "Qualité certifiée", sub: "Normes EN/NF" },
-  { icon: Globe, label: "+10 ans", sub: "D'expérience" },
+  { icon: Globe, label: "+50 ans", sub: "D'expérience" },
 ]
 
 export function MissionSection() {

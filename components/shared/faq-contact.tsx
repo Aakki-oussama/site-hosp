@@ -24,7 +24,7 @@ export function FAQContact({ className }: FAQContactProps) {
               <span>Foire aux questions</span>
             </Badge>
             <h2 className="h-title">
-               Questons{" "}
+               Questions{" "}
           <span className="text-gradient">
             Fréquemment
           </span>

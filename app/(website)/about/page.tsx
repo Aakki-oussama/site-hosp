@@ -59,7 +59,7 @@ export default function AboutPage() {
         align="center"
         title="Notre engagement pour"
         highlight="l'hygiène professionnelle"
-        description="Depuis plus de 10 ans, Polaris Industrie Hosp conçoit et distribue des solutions d'hygiène certifiées pour les professionnels au Maroc."
+        description="Depuis plus de 50 ans, Polaris Industrie Hosp conçoit et distribue des solutions d'hygiène certifiées pour les professionnels au Maroc."
       />
 
       <main>

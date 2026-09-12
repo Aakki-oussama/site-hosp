@@ -70,21 +70,21 @@ export function CTASection() {
               </p>
 
               <p className="text-xs text-muted-foreground">
-                ISO 9001 & ISO 13485
+                ISO 9001 & ISO 22716
               </p>
             </div>
           </div>
         </div>
         {/* CTA Buttons */}
         <div className="mt-8 flex flex-col items-center justify-center gap-6 sm:flex-row">
-          <Button asChild size="lg">
+          <Button asChild size="xl">
             <Link href="/contact">
               Demander un devis
               <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </Button>
 
-          <Button asChild size="lg" variant="outline">
+          <Button asChild size="xl" variant="outline">
             <Link href={`tel:${companyInfo.phone}`}>
               <Phone className="mr-2 h-4 w-4" />
               {companyInfo.phone}

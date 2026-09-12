@@ -11,7 +11,7 @@ export function AboutImages() {
       
       <div className="relative w-full min-h-[24rem] overflow-hidden rounded-3xl border-4 border-background shadow-xl md:min-h-[28rem] lg:min-h-[32rem]">
         <Image
-          src="/images/home/about-us.webp"
+          src="/images/home/about-us-2.webp"
           alt="Hygiène professionnelle Polaris Industrie Hosp"
           fill
           sizes="(max-width: 768px) 85vw, 45vw"

@@ -42,7 +42,7 @@ export function ProductInfo({ product, gammeName, gammeIcon: GammeIcon }: Produc
 
       <div className="border-t border-border pt-5">
         <h2 className="mb-3 text-sm font-semibold uppercase tracking-widest text-foreground">
-          Description détaillée
+          Description
         </h2>
         <p className="whitespace-pre-line text-base leading-relaxed text-foreground/80">
           {product.fullDescription}

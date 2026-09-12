@@ -29,7 +29,7 @@ export function WhyContent() {
 
             {/* Description */}
             <p className=" section-description">
-                Depuis plus de 16 ans, nous accompagnons les professionnels avec des
+                Depuis plus de 51 ans, nous accompagnons les professionnels avec des
                 produits d&apos;hygiène fiables, certifiés et fabriqués localement au Maroc.
             </p>
 
